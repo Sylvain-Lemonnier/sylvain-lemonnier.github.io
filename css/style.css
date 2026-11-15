@@ -474,6 +474,20 @@ img {
   border: 0;
 }
 
+.section__liste--exemples {
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.section__liste--exemples li {
+  margin-bottom: 0.3rem;
+}
+
+/* Texte qui suit une capture au sein du même exemple */
+.exemple__suite {
+  margin-top: 2.5rem;
+}
+
 /* Dépliant, comme un toggle Notion */
 .depliant {
   margin: 0 0 2rem;
