@@ -73,6 +73,29 @@ img {
   outline-offset: 3px;
 }
 
+/* Lien « Aller au contenu » : invisible jusqu'à ce qu'on appuie sur Tab */
+.lien-evitement {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  background: #FFFFFF;
+  color: var(--nuit);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-150%);
+}
+
+.lien-evitement:focus {
+  transform: none;
+}
+
+main:focus {
+  outline: none;   /* la cible du lien d'évitement n'a pas besoin de contour */
+}
+
 .conteneur {
   max-width: var(--largeur-max);
   margin: 0 auto;
@@ -165,6 +188,13 @@ img {
   border-left: 3px solid var(--discovery);
   color: var(--nuit-discret);
   max-width: 34em;
+}
+
+/* Variante de la page 404 : l'accroche occupe l'écran */
+.hero--court {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
 }
 
 /* ---------- 4. Bouton d'appel à l'action ---------- */
@@ -859,12 +889,6 @@ img {
   outline-color: #FFFFFF;
 }
 
-/* Le pied de page suit directement le fond bleu nuit */
-.section--nuit + .pied,
-main:has(.section--nuit:last-child) + .visionneuse + .pied {
-  border-top: none;
-}
-
 /* ---------- 8. Pied de page ---------- */
 .pied {
   border-top: 1px solid #E5E5E3;
@@ -878,6 +902,7 @@ main:has(.section--nuit:last-child) + .visionneuse + .pied {
 }
 
 /* ---------- 9. Adaptation tablette et ordinateur ---------- */
+/* Tablette (≥ 36rem) */
 @media (min-width: 36rem) {
   .chiffres__liste {
     grid-template-columns: repeat(2, 1fr);   /* tablette : 2 × 2 */
@@ -898,14 +923,50 @@ main:has(.section--nuit:last-child) + .visionneuse + .pied {
   }
 }
 
-@media (min-width: 52rem) {
-  .collaborations {
-    grid-template-columns: repeat(3, 1fr);   /* les trois formes à égalité */
+/* Écran moyen (≥ 48rem) : accroche et introduction plus grandes */
+@media (min-width: 48rem) {
+  .intro {
+    padding-top: 4.5rem;
+  }
+
+  .intro p:first-child {
+    font-size: 1.375rem;
+  }
+
+  .hero {
+    padding: 5.5rem 0 6rem;
+  }
+
+  .hero::before {
+    width: 34rem;
+    height: 34rem;
+    top: -13rem;
+    right: -10rem;
+  }
+
+  .hero::after {
+    width: 22rem;
+    height: 22rem;
+    bottom: -9rem;
+    right: -6rem;
+  }
+
+  .hero__marque {
+    font-size: 0.9375rem;
+  }
+
+  .hero__titre {
+    font-size: 2.75rem;
+  }
+
+  .hero__bandeau {
+    font-size: 1.125rem;
   }
 }
 
-/* Schéma de structure : les trois volets côte à côte, boucle au-dessus */
+/* Grand écran (≥ 52rem) : schémas en ligne, légendes masquées, collaborations côte à côte */
 @media (min-width: 52rem) {
+  /* Schéma de structure : les trois volets côte à côte, boucle au-dessus */
   .structure__volets {
     grid-template-columns: 1fr 6.5rem 1fr 6.5rem 1fr;
     padding-left: 0;
@@ -989,8 +1050,13 @@ main:has(.section--nuit:last-child) + .visionneuse + .pied {
     clip: rect(0 0 0 0);
     white-space: nowrap;
   }
+
+  .collaborations {
+    grid-template-columns: repeat(3, 1fr);   /* les trois formes à égalité */
+  }
 }
 
+/* Ordinateur (≥ 62rem) */
 @media (min-width: 62rem) {
   .chiffres__liste {
     grid-template-columns: repeat(4, 1fr);   /* ordinateur : 4 côte à côte */
@@ -999,46 +1065,6 @@ main:has(.section--nuit:last-child) + .visionneuse + .pied {
   .carte-chiffre__titre {
     flex-direction: column;
     gap: 0.35rem;
-  }
-}
-
-@media (min-width: 48rem) {
-  .intro {
-    padding-top: 4.5rem;
-  }
-
-  .intro p:first-child {
-    font-size: 1.375rem;
-  }
-
-  .hero {
-    padding: 5.5rem 0 6rem;
-  }
-
-  .hero::before {
-    width: 34rem;
-    height: 34rem;
-    top: -13rem;
-    right: -10rem;
-  }
-
-  .hero::after {
-    width: 22rem;
-    height: 22rem;
-    bottom: -9rem;
-    right: -6rem;
-  }
-
-  .hero__marque {
-    font-size: 0.9375rem;
-  }
-
-  .hero__titre {
-    font-size: 2.75rem;
-  }
-
-  .hero__bandeau {
-    font-size: 1.125rem;
   }
 }
 
