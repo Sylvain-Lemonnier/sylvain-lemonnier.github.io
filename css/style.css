@@ -968,6 +968,46 @@ main:focus {
   color: var(--nuit);
 }
 
+/* Phrase d'ouverture d'une page satellite */
+.chapeau {
+  max-width: 38em;
+  margin: 0 0 0.75rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--nuit);
+}
+
+/* Liste à puces carrées aux couleurs du bleu Delivery */
+.liste-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 44em;
+}
+
+.liste-points li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  padding-left: 1.4rem;
+  line-height: 1.55;
+}
+
+.liste-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.1rem;
+  background: var(--delivery);
+}
+
+.liste-points strong {
+  color: var(--nuit);
+}
+
 /* Lien interne au site : pas de flèche « site extérieur » */
 .liens a.lien-interne::after {
   content: none;
@@ -1227,6 +1267,10 @@ main:focus {
     margin: 0;
     width: 14rem;
     font-size: 0.9688rem;
+  }
+
+  .tableau--etapes tbody th {
+    width: 10rem;
   }
 
   .tableau td[data-libelle]::before {
