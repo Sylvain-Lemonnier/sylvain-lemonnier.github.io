@@ -889,6 +889,141 @@ main:focus {
   outline-color: #FFFFFF;
 }
 
+/* ----- Pages satellites : en-tête court ----- */
+.entete-page {
+  position: relative;
+  overflow: hidden;
+  background: var(--nuit);
+  color: var(--nuit-texte);
+  padding: 2rem 0 2.5rem;
+}
+
+.entete-page::before {
+  content: "";
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  top: -8rem;
+  right: -7rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.entete-page .conteneur {
+  position: relative;
+}
+
+.entete-page__retour {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nuit-texte);
+  text-decoration: none;
+}
+
+.entete-page__retour:hover {
+  text-decoration: underline;
+}
+
+.entete-page__titre {
+  margin: 1.5rem 0 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.section--premiere {
+  border-top: none;
+}
+
+/* Variantes sur fond clair des blocs de « Travailler ensemble » */
+.auteur--clair .auteur__nom {
+  color: var(--nuit);
+}
+
+.auteur--clair .auteur__photo {
+  border-color: #E8E8E6;
+}
+
+.auteur--clair p,
+.auteur--clair p:last-child {
+  margin: 0.75rem 0 0;
+  max-width: 40em;
+}
+
+.collaborations--clair {
+  margin-bottom: 0;
+}
+
+.collaborations--clair .collaboration {
+  border: 1px solid #E8E8E6;
+  border-top: 4px solid var(--delivery);
+  background: #F7F7F5;
+  color: var(--texte);
+}
+
+.collaborations--clair .collaboration strong {
+  color: var(--nuit);
+}
+
+/* Lien interne au site : pas de flèche « site extérieur » */
+.liens a.lien-interne::after {
+  content: none;
+}
+
+/* ----- Tableaux (issus de Notion) ----- */
+/* Téléphone : chaque ligne devient une carte */
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableau thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.tableau tr {
+  display: block;
+  margin-bottom: 0.75rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #E8E8E6;
+  border-radius: 0.75rem;
+  background: #F7F7F5;
+}
+
+.tableau th,
+.tableau td {
+  display: block;
+  padding: 0;
+  text-align: left;
+  font-size: 0.9688rem;
+  line-height: 1.55;
+}
+
+.tableau tbody th {
+  margin-bottom: 0.3rem;
+  font-size: 1.0625rem;
+  color: var(--nuit);
+}
+
+/* Libellé de colonne affiché dans la carte (tableaux à plus de 2 colonnes) */
+.tableau td[data-libelle]::before {
+  content: attr(data-libelle);
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texte-discret);
+}
+
 /* ---------- 8. Pied de page ---------- */
 .pied {
   border-top: 1px solid #E5E5E3;
@@ -1053,6 +1188,57 @@ main:focus {
 
   .collaborations {
     grid-template-columns: repeat(3, 1fr);   /* les trois formes à égalité */
+  }
+
+  /* Tableaux : vraie grille sur grand écran */
+  .tableau thead {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+  }
+
+  .tableau tr {
+    display: table-row;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .tableau th,
+  .tableau td {
+    display: table-cell;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #E8E8E6;
+    vertical-align: top;
+  }
+
+  .tableau thead th {
+    background: #F3F3F2;
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--texte-discret);
+  }
+
+  .tableau tbody th {
+    margin: 0;
+    width: 14rem;
+    font-size: 0.9688rem;
+  }
+
+  .tableau td[data-libelle]::before {
+    content: none;
+  }
+
+  .entete-page {
+    padding: 2.5rem 0 3.5rem;
+  }
+
+  .entete-page__titre {
+    font-size: 2.5rem;
   }
 }
 
