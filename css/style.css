@@ -171,7 +171,67 @@ img {
   background: #2F6AAB;
 }
 
-/* ---------- 5. Pied de page ---------- */
+/* ---------- 5. Introduction ---------- */
+.intro {
+  padding: 3rem 0 1rem;
+}
+
+.intro p {
+  max-width: 38em;           /* environ 70 caractères par ligne */
+  margin: 0 0 1.1em;
+}
+
+.intro p:first-child {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* ---------- 6. Chiffres clés ---------- */
+.chiffres {
+  padding: 1.5rem 0 3.5rem;
+}
+
+.chiffres__liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;   /* téléphone : une carte par ligne */
+  gap: 1rem;
+}
+
+.carte-chiffre {
+  padding: 1.4rem 1.4rem 1.2rem;
+  border: 1px solid #E8E8E6;
+  border-radius: 0.75rem;
+  background: #F7F7F5;
+}
+
+.carte-chiffre p {
+  margin: 0;
+  font-size: 0.9688rem;
+  line-height: 1.55;
+}
+
+.carte-chiffre__titre {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem !important;
+  font-size: 1.0625rem !important;
+  font-weight: 700;
+  color: var(--nuit);
+}
+
+.carte-chiffre__nombre {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- 7. Pied de page ---------- */
 .pied {
   border-top: 1px solid #E5E5E3;
   padding: 1.5rem 0;
@@ -183,8 +243,33 @@ img {
   margin: 0;
 }
 
-/* ---------- 6. Adaptation ordinateur ---------- */
+/* ---------- 8. Adaptation tablette et ordinateur ---------- */
+@media (min-width: 36rem) {
+  .chiffres__liste {
+    grid-template-columns: repeat(2, 1fr);   /* tablette : 2 × 2 */
+  }
+}
+
+@media (min-width: 62rem) {
+  .chiffres__liste {
+    grid-template-columns: repeat(4, 1fr);   /* ordinateur : 4 côte à côte */
+  }
+
+  .carte-chiffre__titre {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
 @media (min-width: 48rem) {
+  .intro {
+    padding-top: 4.5rem;
+  }
+
+  .intro p:first-child {
+    font-size: 1.375rem;
+  }
+
   .hero {
     padding: 5.5rem 0 6rem;
   }
