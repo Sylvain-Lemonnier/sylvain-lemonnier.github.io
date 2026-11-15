@@ -166,8 +166,74 @@
       </div>
     </section>
 
-    <!-- Les sections suivantes arrivent aux étapes 5 et 6. -->
+    <!-- 5. Voir et manipuler, en vrai ! -->
+    <section class="section" aria-labelledby="titre-manipuler">
+      <div class="conteneur">
+        <h2 id="titre-manipuler" class="section__titre">Voir et manipuler, en vrai&nbsp;!</h2>
+
+        <p class="section__texte">Le guide ne se lit pas seulement, il s'utilise&nbsp;:</p>
+        <ul class="section__liste">
+          <li>Il fonctionne comme un espace de travail.</li>
+        </ul>
+
+        <details class="depliant">
+          <summary>Dans le guide, les exemples sont de vraies bases Notion, reliées entre elles.</summary>
+          <figure class="capture capture--schema">
+            <div class="capture__cadre">
+              <img src="images/captures/bases-product-management.jpg" width="1480" height="1010" loading="lazy"
+                   alt="Schéma des bases Notion du guide, reliées autour du portefeuille d'initiatives, la base pivot : Pilotage (OKR, résultats clés), Organisation (points d'avancement, réunions, pour action), Discovery (tests, études, enseignements), Delivery et mesure (backlog, checklists DoR et DoD, releases, inventaire des features, plans de taggage, événements, dictionnaire des métriques), et des documents de période autonomes.">
+              <button type="button" class="capture__agrandir" data-plein-ecran="images/captures/bases-product-management.jpg">
+                <span aria-hidden="true">⤢</span> Agrandir<span class="visuellement-cache"> le schéma des bases Notion</span>
+              </button>
+            </div>
+          </figure>
+        </details>
+
+        <aside class="encadre">
+          <p><strong>Le cas fil rouge</strong>&nbsp;: une application de navigation, ses trois équipes (Guidage, Mobilité urbaine, Données cartographiques) et leur année produit, cohérente de la vision jusqu'à la story. Toute la chaîne est documentée&nbsp;: objectif, initiative, étude, test, story, plan de taggage, démo, bilan.</p>
+        </aside>
+
+        <!-- La roadmap du trimestre -->
+        <article class="exemple">
+          <h3 class="exemple__titre">La roadmap du trimestre</h3>
+          <p class="section__texte">Les initiatives des trois équipes dans le temps, avec leur statut&nbsp;: discovery, delivery ou mesure.</p>
+
+          <figure class="capture">
+            <div class="capture__cadre">
+              <img src="images/captures/roadmap-1600.jpg" width="1600" height="760" loading="lazy"
+                   alt="Capture du portefeuille d'initiatives dans Notion, vue « Frise du trimestre » : les initiatives des trois équipes placées sur une frise de septembre à octobre, chacune avec son statut et son équipe.">
+              <button type="button" class="capture__agrandir" data-plein-ecran="images/captures/roadmap-3200.jpg">
+                <span aria-hidden="true">⤢</span> Agrandir<span class="visuellement-cache"> la capture de la roadmap</span>
+              </button>
+            </div>
+            <figcaption class="capture__legendes">
+              <ol>
+                <li><span class="pastille-legende" aria-hidden="true">1</span>Plusieurs vues&nbsp;: frise du trimestre, Now / Next / Later, dual track</li>
+                <li><span class="pastille-legende" aria-hidden="true">2</span>Le statut de chaque initiative&nbsp;: discovery, delivery ou mesure</li>
+                <li><span class="pastille-legende" aria-hidden="true">3</span>Les trois équipes sur une même frise, pour voir qui fait quoi et quand</li>
+              </ol>
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- Étape 5b : OKR, backlog, tableau de bord, entraînement, IA -->
+      </div>
+    </section>
+
+    <!-- La section suivante arrive à l'étape 6. -->
   </main>
+
+  <!-- Visionneuse plein écran, partagée par toutes les captures -->
+  <dialog class="visionneuse" aria-label="Capture en plein écran">
+    <button type="button" class="visionneuse__fermer" aria-label="Fermer">✕</button>
+    <div class="visionneuse__zone">
+      <img class="visionneuse__image" src="" alt="">
+    </div>
+    <p class="visionneuse__aide">
+      <span class="aide--souris">Cliquez sur l'image pour zoomer · Échap pour fermer</span>
+      <span class="aide--tactile">Touchez l'image pour zoomer · ✕ pour fermer</span>
+    </p>
+  </dialog>
 
   <footer class="pied">
     <div class="conteneur">
@@ -175,5 +241,6 @@
     </div>
   </footer>
 
+  <script src="js/visionneuse.js" defer></script>
 </body>
 </html>
