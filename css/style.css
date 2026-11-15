@@ -1013,6 +1013,150 @@ main:focus {
   content: none;
 }
 
+/* ----- Page CV ----- */
+/* Téléphone : une colonne, le parcours d'abord, la colonne latérale ensuite */
+.cv {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.cv__identite {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.cv__identite .auteur__photo {
+  width: 5rem;
+  height: 5rem;
+  border-color: #E8E8E6;
+}
+
+.cv__nom {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--delivery-fonce);
+}
+
+.cv__nom strong {
+  text-transform: uppercase;
+}
+
+.cv__accroche {
+  margin: 0.3rem 0 0;
+  font-weight: 700;
+  color: var(--nuit);
+  line-height: 1.4;
+}
+
+.cv__resume {
+  margin-bottom: 2rem;
+}
+
+.cv__rubrique {
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--delivery);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--delivery-fonce);
+}
+
+.cv__principal > .cv__rubrique {
+  margin-top: 0;
+}
+
+.poste {
+  margin: 0 0 1.75rem;
+}
+
+.poste p {
+  margin: 0 0 0.45rem;
+  max-width: 44em;
+  font-size: 0.9688rem;
+  line-height: 1.55;
+}
+
+.poste .poste__dates {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--texte-discret);
+}
+
+.poste__titre {
+  margin: 0.1rem 0 0.15rem;
+  font-size: 1.1875rem;
+  color: var(--nuit);
+}
+
+.poste .poste__societe {
+  margin-bottom: 0.6rem;
+  color: var(--texte-discret);
+}
+
+.cv__lateral {
+  padding: 0.25rem 1.4rem 1.5rem;
+  border-radius: 0.75rem;
+  background: #F3F3F2;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.cv__lateral > .cv__rubrique:first-child {
+  margin-top: 1.25rem;
+}
+
+.cv__lateral p {
+  margin: 0 0 0.5rem;
+}
+
+.cv__lateral a {
+  color: var(--delivery-fonce);
+  overflow-wrap: anywhere;
+}
+
+.cv__liste,
+.cv__coordonnees {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv__liste li,
+.cv__coordonnees li {
+  margin-bottom: 0.5rem;
+}
+
+.cv__titre-bloc {
+  font-weight: 700;
+}
+
+.cv__italique {
+  font-style: italic;
+}
+
+.cv__discret {
+  color: var(--texte-discret);
+}
+
+/* Numéro de téléphone : un faux numéro flouté, le vrai n'est pas dans la page */
+.numero-masque {
+  filter: blur(4px);
+  user-select: none;
+}
+
+.numero-masque__note {
+  margin-left: 0.4rem;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--texte-discret);
+}
+
 /* ----- Tableaux (issus de Notion) ----- */
 /* Téléphone : chaque ligne devient une carte */
 .tableau {
@@ -1271,6 +1415,22 @@ main:focus {
 
   .tableau--etapes tbody th {
     width: 10rem;
+  }
+
+  /* CV : colonne latérale à gauche, comme dans le PDF */
+  .cv {
+    grid-template-columns: 17rem 1fr;
+    grid-template-areas: "lateral principal";
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .cv__principal {
+    grid-area: principal;
+  }
+
+  .cv__lateral {
+    grid-area: lateral;
   }
 
   .tableau td[data-libelle]::before {
