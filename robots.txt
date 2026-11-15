@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap: [A COMPLETER quand l'adresse github.io sera connue]/sitemap.xml
+Sitemap: https://sylvain-lemonnier.github.io/sitemap.xml
