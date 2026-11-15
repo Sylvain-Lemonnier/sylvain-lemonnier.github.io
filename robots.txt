@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Sitemap: [A COMPLETER quand l'adresse github.io sera connue]/sitemap.xml

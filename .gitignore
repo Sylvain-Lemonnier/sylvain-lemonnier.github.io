@@ -1,0 +1,11 @@
+# Fichiers que git ignore : ils restent sur le Mac mais ne vont jamais sur GitHub.
+
+# Notes de travail et consignes pour Claude (dépôt public)
+CLAUDE.md
+.claude/
+
+# Fichiers système macOS
+.DS_Store
+
+# Brouillons et exports bruts (images non optimisées, etc.)
+_brouillons/
