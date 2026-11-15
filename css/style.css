@@ -1,0 +1,224 @@
+/* =========================================================
+   Guide Pratique de Product Management — feuille de style
+   Conception mobile d'abord : les règles de base visent le
+   téléphone, les blocs @media élargissent pour l'ordinateur.
+   ========================================================= */
+
+/* ---------- 1. Charte : couleurs et typographie ---------- */
+:root {
+  /* Volets du guide */
+  --vision: #9A6CB5;
+  --discovery: #D37B2E;
+  --delivery: #387DC9;
+  --organisation: #787774;
+
+  /* Texte et fonds */
+  --texte: #37352F;
+  --texte-discret: #6B6A66;   /* gris un peu plus foncé que --organisation, pour un contraste suffisant sur blanc */
+  --nuit: #1F2937;
+  --nuit-texte: #F3F4F6;
+  --nuit-discret: #C5CAD3;
+  --fond: #FFFFFF;
+
+  /* Polices du système : aucun fichier à charger */
+  --police: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --largeur-max: 60rem;
+  --marge: 1.25rem;
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--police);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--texte);
+  background: var(--fond);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contour visible quand on navigue au clavier */
+:focus-visible {
+  outline: 3px solid var(--delivery);
+  outline-offset: 3px;
+}
+
+.conteneur {
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 0 var(--marge);
+}
+
+/* ---------- 3. Accroche (fond bleu nuit) ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--nuit);
+  color: var(--nuit-texte);
+  padding: 3.5rem 0 4rem;
+}
+
+/* Les deux cercles discrets de la couverture du guide */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 22rem;
+  height: 22rem;
+  top: -9rem;
+  right: -9rem;
+}
+
+.hero::after {
+  width: 14rem;
+  height: 14rem;
+  bottom: -6rem;
+  right: -5rem;
+}
+
+.hero .conteneur {
+  position: relative; /* passe au-dessus des cercles */
+}
+
+.hero__marque {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero__volets {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.85rem 0;
+}
+
+.volet {
+  display: block;
+  width: 2.25rem;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+}
+
+.volet--vision { background: var(--vision); }
+.volet--discovery { background: var(--discovery); }
+.volet--delivery { background: var(--delivery); }
+.volet--organisation { background: var(--organisation); }
+
+.hero__auteur {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--nuit-discret);
+}
+
+.hero__titre {
+  margin: 2.5rem 0 1.25rem;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  max-width: 22em;
+}
+
+.hero__bandeau {
+  margin: 0 0 2rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--discovery);
+  color: var(--nuit-discret);
+  max-width: 34em;
+}
+
+/* ---------- 4. Bouton d'appel à l'action ---------- */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+  background: var(--delivery);
+  color: #FFFFFF;
+  font-size: 1.2rem;           /* gros texte gras : contraste 4,2:1 suffisant */
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.bouton:hover {
+  background: #2F6AAB;
+}
+
+/* ---------- 5. Pied de page ---------- */
+.pied {
+  border-top: 1px solid #E5E5E3;
+  padding: 1.5rem 0;
+  font-size: 0.875rem;
+  color: var(--texte-discret);
+}
+
+.pied p {
+  margin: 0;
+}
+
+/* ---------- 6. Adaptation ordinateur ---------- */
+@media (min-width: 48rem) {
+  .hero {
+    padding: 5.5rem 0 6rem;
+  }
+
+  .hero::before {
+    width: 34rem;
+    height: 34rem;
+    top: -13rem;
+    right: -10rem;
+  }
+
+  .hero::after {
+    width: 22rem;
+    height: 22rem;
+    bottom: -9rem;
+    right: -6rem;
+  }
+
+  .hero__marque {
+    font-size: 0.9375rem;
+  }
+
+  .hero__titre {
+    font-size: 2.75rem;
+  }
+
+  .hero__bandeau {
+    font-size: 1.125rem;
+  }
+}
+
+/* Moins d'animations pour qui les a désactivées */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
