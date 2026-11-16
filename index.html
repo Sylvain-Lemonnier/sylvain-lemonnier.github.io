@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Guide Pratique de Product Management · Sylvain Lemonnier</title>
-  <meta name="description" content="Tout le cycle produit, de la vision au delivery&nbsp;: expliqué, illustré, prêt à l'emploi. Un guide pour les PM et PO qui veulent structurer leur pratique, et pour les head of product et CPO qui font grandir leurs équipes.">
+  <meta name="description" content="Tout le cycle produit, de la vision au delivery&nbsp;: expliqué, illustré, prêt à l'emploi. Un guide pour les PM et PO qui veulent structurer leur pratique, et pour les head of product et Chief Product Officer qui font grandir leurs équipes.">
   <meta name="author" content="Sylvain Lemonnier">
   <link rel="canonical" href="https://sylvain-lemonnier.github.io/">
 
@@ -32,7 +32,8 @@
 
   <!-- 1. Accroche -->
   <header class="hero">
-    <div class="conteneur">
+    <div class="conteneur hero__grille">
+      <div class="hero__texte">
       <p class="hero__marque">Guide Pratique de Product Management</p>
       <div class="hero__volets" aria-hidden="true">
         <span class="volet volet--vision"></span>
@@ -49,22 +50,56 @@
       <a class="bouton" href="/contact/">
         <span aria-hidden="true">📩</span> Écrivez-moi
       </a>
+      </div>
+
+      <!-- Vitrine décorative : deux captures du guide, reprises plus bas avec leur légende -->
+      <div class="hero__vitrine" aria-hidden="true">
+        <div class="hero__capture hero__capture--fond"><img src="images/captures/roadmap-1600.jpg" width="1600" height="760" alt=""></div>
+        <div class="hero__capture hero__capture--avant"><img src="images/captures/tableau-de-bord-pm-1600.jpg" width="1600" height="1080" alt=""></div>
+      </div>
     </div>
   </header>
 
   <main id="contenu" tabindex="-1">
 
-    <!-- 2. Introduction -->
-    <section class="intro">
+    <!-- 2. Le guide en chiffres, d'un coup d'œil -->
+    <section class="reperes" aria-label="Le guide en chiffres">
       <div class="conteneur">
-        <p>Un guide pour les PM et PO qui veulent structurer leur pratique, et pour les head of product et CPO qui font grandir leurs équipes.</p>
-        <p>Pour chaque pratique&nbsp;: ce qu'il faut faire, pourquoi, et les erreurs que cela évite. Avec un fil conducteur qui prend de plus en plus de place&nbsp;: comment l'IA change concrètement le quotidien du PM. Le guide lui-même a été écrit en binôme avec une IA&nbsp;: je fixe les positions et les arbitrages, l'IA m'aide à les confronter aux ouvrages de référence, à les approfondir, à les structurer et à les illustrer. Chaque gabarit est rempli sur un même cas fil rouge, une application de navigation, de la vision produit jusqu'à la user story.</p>
-        <p>Au total, plus de 400 pages si on l'imprimait. Une base méthodologique qui s'adapte à chaque contexte (taille d'équipe, B2B ou B2C, maturité de l'organisation), pas un framework à appliquer à la lettre.</p>
+        <ul class="reperes__liste">
+          <li class="reperes__item reperes__item--vision"><span class="reperes__nombre">25</span> chapitres</li>
+          <li class="reperes__item reperes__item--discovery"><span class="reperes__nombre">37</span> gabarits</li>
+          <li class="reperes__item reperes__item--delivery"><span class="reperes__nombre">21</span> modèles Notion</li>
+          <li class="reperes__item reperes__item--organisation"><span class="reperes__nombre">124</span> fiches</li>
+          <li class="reperes__item"><span class="reperes__nombre">400+</span> pages</li>
+        </ul>
       </div>
     </section>
 
-    <!-- 3. Chiffres clés -->
-    <section class="chiffres" aria-label="Le guide en chiffres">
+    <!-- 3. Introduction, en trois blocs -->
+    <section class="intro" aria-label="Présentation du guide">
+      <div class="conteneur">
+        <div class="intro__blocs">
+          <div class="intro__bloc">
+            <h2 class="intro__titre"><span aria-hidden="true">👥</span> Pour qui</h2>
+            <p>Un guide pour les PM et PO qui veulent structurer leur pratique, et pour les head of product et Chief Product Officer qui font grandir leurs équipes.</p>
+            <p>Une base méthodologique qui s'adapte à chaque contexte (taille d'équipe, B2B ou B2C, maturité de l'organisation), pas un framework à appliquer à la lettre.</p>
+          </div>
+          <div class="intro__bloc">
+            <h2 class="intro__titre"><span aria-hidden="true">🧭</span> Comment</h2>
+            <p>Pour chaque pratique&nbsp;: ce qu'il faut faire, pourquoi, et les erreurs que cela évite.</p>
+            <p>Chaque gabarit est rempli sur un même cas fil rouge, une application de navigation, de la vision produit jusqu'à la user story. Au total, plus de 400 pages si on l'imprimait.</p>
+          </div>
+          <div class="intro__bloc">
+            <h2 class="intro__titre"><span aria-hidden="true">🤖</span> Avec l'IA</h2>
+            <p>Un fil conducteur qui prend de plus en plus de place&nbsp;: comment l'IA change concrètement le quotidien du PM.</p>
+            <p>Le guide lui-même a été écrit en binôme avec une IA&nbsp;: je fixe les positions et les arbitrages, l'IA m'aide à les confronter aux ouvrages de référence, à les approfondir, à les structurer et à les illustrer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Chiffres clés détaillés -->
+    <section class="chiffres" aria-label="Le contenu du guide">
       <div class="conteneur">
         <ul class="chiffres__liste">
           <li class="carte-chiffre">
@@ -394,14 +429,14 @@
           <div>
             <h3 class="auteur__nom">Sylvain Lemonnier</h3>
             <p class="auteur__role">Product leader et coach en product management</p>
-            <p>Ce guide, je l'ai construit en <strong>20 ans de product management</strong>, notamment en tant que Head of Product et CPO chez <strong>Qwant, Mappy et RATP</strong>, à la tête d'équipes de 10 à 25 personnes.</p>
+            <p>Ce guide, je l'ai construit en <strong>20 ans de product management</strong>, notamment en tant que Head of Product et Chief Product Officer chez <strong>Qwant, Mappy et RATP</strong>, à la tête d'équipes de 10 à 25 personnes.</p>
           </div>
         </div>
 
         <p class="section__texte">Aujourd'hui, je souhaite mettre cette expérience au service d'une entreprise&nbsp;:</p>
 
         <ul class="collaborations">
-          <li class="collaboration"><strong>En rejoignant une direction produit</strong> comme CPO ou Head of Product</li>
+          <li class="collaboration"><strong>En rejoignant une direction produit</strong> comme Chief Product Officer ou Head of Product</li>
           <li class="collaboration"><strong>En direction produit de transition ou à temps partagé</strong> le temps de structurer ou de recruter</li>
           <li class="collaboration"><strong>Ou en mission</strong> structurer une fonction produit, coacher les PM et les PO, installer des rituels, une roadmap et un pilotage qui produisent des décisions, intégrer l'IA dans le quotidien des équipes produit</li>
         </ul>

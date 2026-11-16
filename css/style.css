@@ -186,8 +186,108 @@ main:focus {
   margin: 0 0 2rem;
   padding-left: 0.9rem;
   border-left: 3px solid var(--discovery);
-  color: var(--nuit-discret);
+  color: #EC9A55;      /* orange Discovery éclairci : contraste d'environ 6 sur le bleu nuit */
   max-width: 34em;
+}
+
+/* Vitrine : captures du guide à côté du texte (téléphone : une seule, sous le bouton) */
+.hero__vitrine {
+  margin-top: 2.5rem;
+}
+
+/* Chaque capture est recadrée sur sa fenêtre : on retire la marge sombre et les légendes */
+.hero__capture {
+  overflow: hidden;
+  border-radius: 0.6rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+}
+
+.hero__capture img {
+  display: block;
+  width: 117.65%;       /* la fenêtre fait 1360 px sur les 1600 de la capture */
+  max-width: none;
+  height: auto;
+  margin: -5.15% 0 0 -8.82%;   /* décalage de la fenêtre : 70 px en haut, 120 px à gauche */
+}
+
+.hero__capture--fond {
+  display: none;
+}
+
+.hero__capture--avant {
+  aspect-ratio: 1360 / 860;   /* coupe sous la fenêtre, avant les légendes */
+}
+
+.intro__titre span[aria-hidden="true"] {
+  margin-right: 0.3em;
+}
+
+/* ---------- Le guide en chiffres, juste sous l'accroche ---------- */
+.reperes {
+  position: relative;
+  z-index: 1;
+  margin-top: -2rem;   /* la carte chevauche le bas de l'accroche */
+}
+
+.reperes__liste {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.25rem;
+  margin: 0;
+  padding: 1.25rem 0.75rem;
+  border-radius: 0.9rem;
+  background: var(--fond);
+  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.12);
+}
+
+.reperes__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--texte-discret);
+  text-align: center;
+}
+
+.reperes__nombre {
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--nuit);
+}
+
+.reperes__item--vision .reperes__nombre { color: var(--vision-fonce); }
+.reperes__item--discovery .reperes__nombre { color: var(--discovery-fonce); }
+.reperes__item--delivery .reperes__nombre { color: var(--delivery-fonce); }
+.reperes__item--organisation .reperes__nombre { color: var(--organisation-fonce); }
+
+/* ---------- Introduction en trois blocs ---------- */
+.intro__blocs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+.intro__titre {
+  margin: 0 0 0.6rem;
+  font-size: 1.1875rem;
+  line-height: 1.3;
+  color: var(--nuit);
+}
+
+.intro__bloc p {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.intro__bloc p:last-child {
+  margin-bottom: 0;
 }
 
 /* Variante de la page 404 : l'accroche occupe l'écran */
@@ -315,9 +415,10 @@ main:focus {
 }
 
 .section__titre {
-  margin: 0 0 1rem;
-  font-size: 1.75rem;
-  line-height: 1.25;
+  margin: 0 0 1.25rem;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--nuit);
 }
 
@@ -1828,6 +1929,10 @@ p.parcours__statut {
     padding-top: 4.5rem;
   }
 
+  .section__titre {
+    font-size: 2.5rem;
+  }
+
   .inventaire {
     grid-template-columns: repeat(2, 1fr);   /* deux volets côte à côte, comme dans Notion */
     gap: 2.5rem 3rem;
@@ -1883,6 +1988,12 @@ p.parcours__statut {
 
 /* Grand écran (≥ 52rem) : schémas en ligne, légendes masquées, collaborations côte à côte */
 @media (min-width: 52rem) {
+  /* Introduction : trois blocs côte à côte */
+  .intro__blocs {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
   /* Schéma de structure : les trois volets côte à côte, boucle au-dessus */
   .structure__volets {
     grid-template-columns: 1fr 6.5rem 1fr 6.5rem 1fr;
@@ -2053,6 +2164,58 @@ p.parcours__statut {
   .carte-chiffre__titre {
     flex-direction: column;
     gap: 0.35rem;
+  }
+
+  /* Accroche sur deux colonnes : le texte à gauche, les captures à droite */
+  .hero__grille {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero__titre {
+    font-size: 2.375rem;
+  }
+
+  .hero__vitrine {
+    position: relative;
+    margin-top: 0;
+    aspect-ratio: 1 / 0.82;
+  }
+
+  .hero__capture--fond,
+  .hero__capture--avant {
+    position: absolute;
+    width: 88%;
+  }
+
+  .hero__capture--fond {
+    display: block;
+    top: 0;
+    right: 0;
+    aspect-ratio: 1360 / 555;
+    transform: rotate(2.5deg);
+    opacity: 0.9;
+  }
+
+  .hero__capture--avant {
+    bottom: 0;
+    left: 0;
+    transform: rotate(-1.5deg);
+  }
+
+  .reperes {
+    margin-top: -2.75rem;
+  }
+
+  .reperes__liste {
+    justify-content: space-around;
+    padding: 1.5rem 2rem;
+  }
+
+  .reperes__nombre {
+    font-size: 2.75rem;
   }
 }
 
