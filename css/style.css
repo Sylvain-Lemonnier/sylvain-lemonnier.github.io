@@ -273,15 +273,17 @@ main:focus {
 @supports (grid-template-rows: subgrid) {
   .carte-chiffre {
     display: grid;
-    grid-row: span 4;
+    grid-row: span 3;   /* titre, texte, liens */
     grid-template-rows: subgrid;
     row-gap: 0;
   }
 }
 
-.carte-chiffre p.carte-chiffre__lien {
-  align-self: start;
+.carte-chiffre__liens {
   padding-top: 0.8rem;
+}
+
+.carte-chiffre p.carte-chiffre__lien {
   font-weight: 600;
 }
 
@@ -289,9 +291,10 @@ main:focus {
   color: var(--delivery-fonce);
 }
 
+/* Le lien vers l'exemple a exactement l'allure du lien vers la liste */
 .carte-chiffre p.carte-chiffre__exemple {
-  margin-top: 0.35rem;
-  color: var(--texte-discret);
+  padding-top: 0.35rem;
+  font-weight: 600;
 }
 
 .carte-chiffre__exemple a {
