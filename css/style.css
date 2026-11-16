@@ -327,9 +327,9 @@ main:focus {
 }
 
 .intro__titre {
-  margin: 0 0 0.6rem;
-  font-size: 1.1875rem;
-  line-height: 1.3;
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;   /* nettement plus grand que le texte, plus petit que les titres de section */
+  line-height: 1.25;
   color: var(--nuit);
 }
 
