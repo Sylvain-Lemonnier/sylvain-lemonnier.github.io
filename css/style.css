@@ -1254,7 +1254,7 @@ main:focus {
 }
 
 .formulaire__mention {
-  margin: 0 0 1.5rem;
+  margin: 1rem 0 0;
   font-size: 0.875rem;
   color: var(--texte-discret);
 }
@@ -1289,6 +1289,31 @@ main:focus {
 .formulaire__statut--erreur {
   background: #FBEDEB;
   color: #A3301F;
+}
+
+/* Confirmation affichée à la place du formulaire */
+.confirmation {
+  max-width: 36rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: #EAF5EC;
+  border-left: 4px solid #1E6B34;
+}
+
+.confirmation:focus {
+  outline: none;
+}
+
+.confirmation__texte {
+  margin: 0 0 1rem;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: #1E6B34;
+}
+
+.confirmation__retour {
+  font-weight: 600;
+  color: var(--delivery-fonce);
 }
 
 /* ---------- 8. Pied de page ---------- */

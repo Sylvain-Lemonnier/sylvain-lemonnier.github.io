@@ -33,8 +33,15 @@
       .then(function (reponse) { return reponse.json(); })
       .then(function (resultat) {
         if (resultat.success) {
+          // Le formulaire et la phrase d'introduction laissent place à la seule confirmation
+          var confirmation = document.getElementById('confirmation');
+          var chapeau = document.getElementById('contact-chapeau');
           formulaire.reset();
-          afficher('Merci, votre message est bien envoyé.', 'succes');
+          formulaire.hidden = true;
+          if (chapeau) chapeau.hidden = true;
+          confirmation.hidden = false;
+          confirmation.focus();   // les lecteurs d'écran annoncent la confirmation
+          window.scrollTo(0, 0);
         } else {
           throw new Error(resultat.message);
         }

@@ -46,7 +46,7 @@
 
     <section class="section section--premiere" aria-label="Formulaire de contact">
       <div class="conteneur">
-        <p class="chapeau">Pour accéder au guide complet ou pour échanger, laissez&#8209;moi un message.</p>
+        <p class="chapeau" id="contact-chapeau">Pour accéder au guide complet ou pour échanger, laissez&#8209;moi un message.</p>
 
         <!-- Le formulaire est transmis à Web3Forms, qui envoie le message par e-mail.
              La clé d'accès n'est pas secrète : elle est faite pour figurer dans la page. -->
@@ -73,12 +73,18 @@
             <textarea id="message" name="message" required rows="7" maxlength="5000"></textarea>
           </div>
 
-          <p class="formulaire__mention">Ces informations servent uniquement à vous répondre. Elles transitent par le service Web3Forms, qui me transmet votre message par e-mail.</p>
-
           <button type="submit" class="bouton formulaire__envoyer">Envoyer</button>
 
           <p class="formulaire__statut" id="formulaire-statut" role="status" aria-live="polite"></p>
+
+          <p class="formulaire__mention">Ces informations servent uniquement à vous répondre. Elles transitent par le service Web3Forms, qui me transmet votre message par e-mail.</p>
         </form>
+
+        <!-- Affiché à la place du formulaire une fois le message envoyé -->
+        <div class="confirmation" id="confirmation" tabindex="-1" hidden>
+          <p class="confirmation__texte">Merci, votre message est bien envoyé.</p>
+          <a class="confirmation__retour" href="/">← Retour au Guide Pratique de Product Management</a>
+        </div>
       </div>
     </section>
 
