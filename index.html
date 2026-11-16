@@ -30,11 +30,21 @@
 
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
+  <!-- Barre fixe : apparaît quand le grand titre sort de l'écran (js/animations.js) -->
+  <div class="barre" aria-hidden="true" inert>
+    <div class="conteneur barre__contenu">
+      <a class="barre__titre" href="#">Guide Pratique de Product Management</a>
+      <a class="bouton bouton--petit" href="/contact/">
+        <span aria-hidden="true">📩</span> Écrivez-moi
+      </a>
+    </div>
+  </div>
+
   <!-- 1. Accroche -->
   <header class="hero">
     <div class="conteneur hero__grille">
       <div class="hero__texte">
-      <p class="hero__marque">Guide Pratique de Product Management</p>
+      <h1 class="hero__marque">Guide Pratique de Product Management</h1>
       <div class="hero__volets" aria-hidden="true">
         <span class="volet volet--vision"></span>
         <span class="volet volet--discovery"></span>
@@ -43,7 +53,7 @@
       </div>
       <p class="hero__auteur">Par Sylvain Lemonnier</p>
 
-      <h1 class="hero__titre">Tout le cycle produit, de la vision au delivery&nbsp;: expliqué, illustré, prêt à l'emploi</h1>
+      <p class="hero__titre">Tout le cycle produit, de la vision au delivery&nbsp;: expliqué, illustré, prêt à l'emploi</p>
 
       <p class="hero__bandeau">Ces pages sont une présentation rapide du guide, la version complète est accessible sur demande.</p>
 

@@ -51,6 +51,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 4.5rem;   /* l'élément ciblé ne passe pas sous la barre fixe de l'accueil */
 }
 
 body {
@@ -78,7 +79,7 @@ img {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
-  z-index: 10;
+  z-index: 30;   /* au-dessus de la barre fixe */
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
   background: #FFFFFF;
@@ -139,12 +140,14 @@ main:focus {
   position: relative; /* passe au-dessus des cercles */
 }
 
+/* Titre du guide : le titre principal de la page */
 .hero__marque {
   margin: 0;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #FFFFFF;
 }
 
 .hero__volets {
@@ -173,13 +176,63 @@ main:focus {
   color: var(--nuit-discret);
 }
 
+/* Slogan, en sous-titre */
 .hero__titre {
-  margin: 2.5rem 0 1.25rem;
-  font-size: 1.875rem;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  margin: 2rem 0 1.25rem;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 600;
   max-width: 22em;
+}
+
+/* ---------- Barre fixe (accueil) ----------
+   Cachée au chargement ; js/animations.js ajoute « barre--visible »
+   quand le grand titre sort de l'écran. */
+.barre {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: rgba(31, 41, 55, 0.96);   /* bleu nuit, très légèrement translucide */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-110%);
+  visibility: hidden;
+  transition: transform 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.barre--visible {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.25s ease;
+}
+
+.barre__contenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.barre__titre {
+  font-size: 0.9375rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.barre__titre:hover {
+  text-decoration: underline;
+}
+
+.barre .bouton--petit {   /* « .barre » : passe avant la règle .bouton, plus bas dans le fichier */
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
 }
 
 .hero__bandeau {
@@ -2402,11 +2455,15 @@ p.parcours__statut {
   }
 
   .hero__marque {
-    font-size: 0.9375rem;
+    font-size: 3.25rem;
   }
 
   .hero__titre {
-    font-size: 2.75rem;
+    font-size: 1.75rem;
+  }
+
+  .barre__titre {
+    font-size: 1.0625rem;
   }
 
   .hero__bandeau {
@@ -2626,7 +2683,7 @@ p.parcours__statut {
   }
 
   .hero__titre {
-    font-size: 2.375rem;
+    font-size: 1.625rem;
   }
 
   .hero__vitrine {

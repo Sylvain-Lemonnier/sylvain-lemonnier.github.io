@@ -6,6 +6,23 @@
    que lorsque ce script ajoute la classe « anime » sur <html>.
    Rien ne bouge si le visiteur a demandé moins d'animations. */
 
+/* Barre fixe : visible dès que le grand titre du guide a quitté l'écran.
+   Fonctionne même si le visiteur a demandé moins d'animations
+   (la barre apparaît alors sans glisser, voir le CSS). */
+(function () {
+  const barre = document.querySelector('.barre');
+  const titre = document.querySelector('.hero__marque');
+  if (!barre || !titre || !('IntersectionObserver' in window)) return;
+
+  new IntersectionObserver(function (entrees) {
+    const titreSorti = !entrees[0].isIntersecting && entrees[0].boundingClientRect.top < 0;
+    barre.classList.toggle('barre--visible', titreSorti);
+    // Tant qu'elle est cachée, la barre est ignorée par le clavier et les lecteurs d'écran
+    barre.inert = !titreSorti;
+    barre.setAttribute('aria-hidden', titreSorti ? 'false' : 'true');
+  }).observe(titre);
+})();
+
 (function () {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
