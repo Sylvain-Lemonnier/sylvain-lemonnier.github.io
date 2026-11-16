@@ -1521,6 +1521,176 @@ p.encadre__titre {
   background: var(--discovery-clair);
 }
 
+/* Petit espace entre un émoji décoratif et le texte qui suit */
+.chapitre span[aria-hidden="true"]:not(.jauge) {
+  margin-right: 0.2em;
+}
+
+.chapitre__note {
+  color: var(--texte-discret);
+}
+
+.chapitre__depliant {
+  margin-top: 1.5rem;
+}
+
+.depliant__contenu {
+  padding: 0 1.25rem 1rem 2.4rem;
+}
+
+.depliant__contenu ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+/* Un document du guide présenté comme une page à part */
+.fiche {
+  padding: 1.5rem 1.25rem;
+  border: 1px solid #E8E8E6;
+  border-radius: 0.75rem;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(31, 41, 55, 0.06);
+}
+
+.fiche > p,
+.fiche > ul {
+  margin: 0 0 0.9rem;
+}
+
+.fiche > ul {
+  padding-left: 1.4rem;
+}
+
+.fiche .tableau {
+  margin-bottom: 1rem;
+}
+
+.fiche h3 {
+  margin-top: 1.75rem;
+}
+
+h2.fiche__titre {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.citation {
+  margin: 0 0 1.5rem;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--organisation);
+  color: var(--texte-discret);
+}
+
+.citation p {
+  margin: 0;
+  font-size: 1.125rem;
+  font-style: italic;
+}
+
+.citation footer {
+  margin-top: 0.3rem;
+  font-size: 0.9375rem;
+}
+
+/* Deux encadrés côte à côte sur grand écran */
+.duo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.duo .encadre {
+  margin: 0;
+}
+
+/* Les moments du parcours utilisateur */
+.parcours {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.parcours__moment {
+  margin: 0 !important;
+  padding: 0.9rem 1rem;
+  border: 1px solid #E8E8E6;
+  border-radius: 0.6rem;
+  background: #F7F7F5;
+}
+
+.parcours__moment p {
+  margin: 0 0 0.35rem;
+}
+
+.parcours__titre {
+  font-weight: 700;
+  color: var(--nuit);
+}
+
+p.parcours__statut {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--texte-discret);
+}
+
+.parcours__statut--traite {
+  color: #2F6B4C !important;
+}
+
+/* Jauge d'appétit consommé */
+.jauge {
+  display: inline-block;
+  width: 6rem;
+  height: 0.6rem;
+  margin-right: 0.4rem;
+  border-radius: 1rem;
+  background: #E3E2DE;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.jauge__niveau {
+  display: block;
+  height: 100%;
+  background: var(--delivery);
+}
+
+/* Frise des statuts d'une initiative */
+.frise {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.frise__etape {
+  margin: 0 !important;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+  background: #F1F1EF;
+  color: var(--texte-discret);
+  font-size: 0.9375rem;
+}
+
+.frise__etape--discovery {
+  background: var(--vision-clair);
+  color: var(--vision-fonce);
+}
+
+.frise__etape--delivery {
+  background: var(--delivery);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
 /* Checklist : cases à cocher dessinées, non interactives */
 .checklist {
   list-style: none;
@@ -1590,6 +1760,18 @@ p.encadre__titre {
   .inventaire {
     grid-template-columns: repeat(2, 1fr);   /* deux volets côte à côte, comme dans Notion */
     gap: 2.5rem 3rem;
+  }
+
+  .duo {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .parcours {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fiche {
+    padding: 2rem 2.25rem;
   }
 
   .intro p:first-child {

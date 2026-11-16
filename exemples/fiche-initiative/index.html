@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fiche initiative · Guide Pratique de Product Management</title>
+  <meta name="description" content="Un gabarit du Guide Pratique de Product Management, rempli sur le cas fil rouge : la fiche initiative, du pourquoi aux stories, avec son investissement en lingots et sa prochaine décision.">
+  <meta name="author" content="Sylvain Lemonnier">
+  <link rel="canonical" href="https://sylvain-lemonnier.github.io/exemples/fiche-initiative/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Guide Pratique de Product Management">
+  <meta property="og:title" content="Fiche initiative · Guide Pratique de Product Management">
+  <meta property="og:description" content="Un gabarit du guide rempli sur le cas fil rouge : pourquoi, comment, investissement, où on en est, et les stories.">
+  <meta property="og:url" content="https://sylvain-lemonnier.github.io/exemples/fiche-initiative/">
+  <meta property="og:image" content="https://sylvain-lemonnier.github.io/images/apercu-linkedin.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Guide Pratique de Product Management, par Sylvain Lemonnier">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete-page">
+    <div class="conteneur">
+      <a class="entete-page__retour" href="/gabarits/">← Liste des gabarits</a>
+      <div class="hero__volets" aria-hidden="true">
+        <span class="volet volet--vision"></span>
+        <span class="volet volet--discovery"></span>
+        <span class="volet volet--delivery"></span>
+        <span class="volet volet--organisation"></span>
+      </div>
+      <p class="entete-page__surtitre">Extrait du guide · Gabarit du volet Vision</p>
+      <h1 class="entete-page__titre"><span aria-hidden="true">🚀</span> Fiche initiative</h1>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <article class="section section--premiere">
+      <div class="conteneur chapitre">
+
+        <aside class="encadre encadre--essentiel">
+          <p>Chaque initiative de la roadmap tient en une fiche, qui se lit dans l'ordre&nbsp;: <strong>pourquoi</strong> on la mène, <strong>comment</strong> on s'y prend, <strong>ce qu'elle coûte et rapporte</strong>, <strong>où on en est</strong>, et les <strong>stories</strong> qui la réalisent. Tenues dans une base, les fiches forment le portefeuille d'initiatives, d'où l'on tire les vues de la roadmap. Voir la page «&nbsp;La roadmap&nbsp;».</p>
+        </aside>
+
+        <p class="chapitre__note"><em>L'exemple ci-dessous est la fiche des alertes de perturbation, telle qu'elle vit dans la base Portefeuille d'initiatives. Les consignes de remplissage sont dans le menu dépliant en bas de l'exemple.</em></p>
+
+        <div class="fiche">
+
+          <blockquote class="citation">
+            <p>«&nbsp;J'apprends la grève une fois sur le quai. Là, j'ouvre l'appli de l'opérateur, et je cours.&nbsp;»</p>
+            <footer>— <cite>Usagère du RER B, entretien de septembre</cite></footer>
+          </blockquote>
+
+          <h2 class="fiche__titre"><span aria-hidden="true">🔔</span> Alertes de perturbation sur les trajets favoris</h2>
+
+          <h3><span aria-hidden="true">💡</span> Pourquoi</h3>
+
+          <p><strong>Problème</strong>&nbsp;: les usagers découvrent les perturbations une fois sur le quai, et basculent sur l'application de l'opérateur.</p>
+          <p><strong>Cible</strong>&nbsp;: les usagers quotidiens des transports en commun en Île-de-France.</p>
+          <p><strong>Le pari</strong>&nbsp;: <strong>si</strong> on les prévient 20 minutes avant leur départ habituel, <strong>alors</strong> ils planifieront leur trajet chez nous.</p>
+
+          <div class="duo">
+            <p class="encadre encadre--repere"><span aria-hidden="true">🎯</span> <strong>Ambition</strong>&nbsp;: 30&nbsp;% des utilisateurs qui ont un trajet favori activent les alertes</p>
+            <p class="encadre encadre--exemple"><span aria-hidden="true">📈</span> <strong>Objectif</strong>&nbsp;: +15&nbsp;% de trajets quotidiens planifiés (OKR 1&nbsp;: devenir le réflexe des trajets du quotidien en ville)</p>
+          </div>
+
+          <ol class="parcours" aria-label="Les moments du parcours">
+            <li class="parcours__moment">
+              <p class="parcours__titre">Avant de partir <span aria-hidden="true">😐</span></p>
+              <p>Consulte l'état du réseau sans repère</p>
+              <p class="parcours__statut parcours__statut--traite"><span aria-hidden="true">✅</span> <strong>On le traite</strong>&nbsp;: une alerte 20 min avant le départ</p>
+            </li>
+            <li class="parcours__moment">
+              <p class="parcours__titre">Sur le quai <span aria-hidden="true">😰</span></p>
+              <p>Découvre la perturbation, change d'appli</p>
+              <p class="parcours__statut"><span aria-hidden="true">⏸️</span> <strong>Plus tard</strong>&nbsp;: un itinéraire de remplacement</p>
+            </li>
+            <li class="parcours__moment">
+              <p class="parcours__titre">Après <span aria-hidden="true">😠</span></p>
+              <p>Arrive en retard</p>
+              <p class="parcours__statut"><span aria-hidden="true">🔍</span> <strong>À creuser</strong>&nbsp;: l'historique de fiabilité du trajet</p>
+            </li>
+          </ol>
+
+          <h3><span aria-hidden="true">🛠️</span> Comment</h3>
+
+          <ul>
+            <li><strong>Équipe</strong>&nbsp;: Mobilité urbaine + Données cartographiques (flux temps réel)</li>
+            <li><strong>Appétit</strong>&nbsp;: 2 lingots (deux sprints), sans coût externe&nbsp;: le détail est dans «&nbsp;Investissement&nbsp;»</li>
+            <li><strong>Confiance</strong>&nbsp;: <span aria-hidden="true">🟠</span> moyenne (verbatims du support, une étude, un prototype testé avec 8 usagers)</li>
+            <li><strong>Dépendance</strong>&nbsp;: les flux des opérateurs, découplés par une interface livrée en amont (CAR-309)</li>
+            <li><strong>Garde-fou</strong>&nbsp;: moins de 5&nbsp;% de désactivation des notifications</li>
+            <li><strong>Hors périmètre</strong>&nbsp;: les itinéraires de remplacement</li>
+            <li><strong>Actions hors produit</strong>&nbsp;: notification dans l'application et newsletter aux usagers des transports en commun, par le marketing, une semaine après la généralisation</li>
+          </ul>
+
+          <h3><span aria-hidden="true">💶</span> Investissement</h3>
+
+          <table class="tableau">
+            <thead>
+              <tr><th scope="col"><span class="visuellement-cache">Poste</span></th><th scope="col">Estimé</th><th scope="col">Réel</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Équipe</th>
+                <td data-libelle="Estimé">2 lingots (Mobilité urbaine, avec Données cartographiques)</td>
+                <td data-libelle="Réel"><span class="jauge" aria-hidden="true"><span class="jauge__niveau" style="width: 75%"></span></span> 1,5 sur 2 au 9 novembre</td>
+              </tr>
+              <tr><th scope="row">Externe</th><td data-libelle="Estimé">0 €&nbsp;: les flux temps réel des opérateurs sont gratuits</td><td data-libelle="Réel">À la revue</td></tr>
+              <tr><th scope="row">Run</th><td data-libelle="Estimé">Maintenance de l'interface des flux (CAR-309), réglage des seuils, support</td><td data-libelle="Réel">À la revue</td></tr>
+              <tr><th scope="row">Gain</th><td data-libelle="Estimé">Activation des alertes&nbsp;: 0 → 30&nbsp;% des utilisateurs ayant un trajet favori</td><td data-libelle="Réel">À la revue</td></tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li><strong>Critère d'arrêt</strong>&nbsp;: moins de 10&nbsp;% d'activation au 19 novembre 2026, on corrige avant de généraliser · <strong>Revue estimé / réel</strong>&nbsp;: 14 janvier 2027</li>
+            <li><strong>Délai d'effet attendu</strong>&nbsp;: quatre semaines après la généralisation, le temps que l'habitude s'installe · <strong>Mesure de l'effet</strong>&nbsp;: 7 janvier 2027</li>
+            <li><strong>Décision et leçon</strong>&nbsp;: à la revue</li>
+          </ul>
+
+          <h3><span aria-hidden="true">📍</span> Où on en est</h3>
+
+          <ol class="frise" aria-label="Statut de l'initiative">
+            <li class="frise__etape">Identifié</li>
+            <li class="frise__etape frise__etape--discovery">Discovery <span aria-hidden="true">✅</span><span class="visuellement-cache"> (terminée)</span></li>
+            <li class="frise__etape frise__etape--delivery" aria-current="step">Delivery, déployé à 10&nbsp;%</li>
+            <li class="frise__etape">Mesure</li>
+          </ol>
+
+          <ul>
+            <li><strong>Décision passée</strong>&nbsp;: le bandeau d'état du réseau, testé en discovery, est abandonné (MOB-105)&nbsp;: les usagers ne le lisaient pas</li>
+          </ul>
+
+          <aside class="encadre encadre--essentiel">
+            <p><span aria-hidden="true">⏭️</span> <strong>Prochaine décision</strong>&nbsp;: généraliser à tous les utilisateurs, ou corriger d'abord. Au comité roadmap du 19 novembre 2026, au vu du taux d'activation.</p>
+          </aside>
+
+          <h3><span aria-hidden="true">📋</span> Les stories</h3>
+
+          <p>Dans le backlog, reliées à l'initiative&nbsp;: MOB-102 Choisir son heure de départ habituelle pour les alertes · MOB-103 Plafonner à deux alertes par jour · MOB-104 Évaluer le déploiement progressif des alertes (10&nbsp;%)</p>
+
+        </div>
+
+        <details class="depliant chapitre__depliant">
+          <summary><span><span aria-hidden="true">📝</span> Comment remplir cette fiche</span></summary>
+          <div class="depliant__contenu">
+            <ul>
+              <li><strong>Verbatim</strong>&nbsp;: une phrase d'entretien qui dit le problème avec les mots de l'utilisateur</li>
+              <li><strong>Titre</strong>&nbsp;: le problème tant que la discovery n'a pas conclu&nbsp;; la feature, une fois validée</li>
+              <li><strong>Pourquoi</strong>&nbsp;: le problème, la cible, le pari («&nbsp;si… alors…&nbsp;»), l'ambition en un chiffre, l'OKR servi (ou l'enveloppe, pour le socle technique), et les moments du parcours&nbsp;: ce qu'on traite, ce qu'on repousse</li>
+              <li><strong>Comment</strong>&nbsp;: l'équipe qui porte + celles qui contribuent, l'appétit (1, 2 ou 3 lingots, voir la page «&nbsp;Le Backlog&nbsp;») et le coût externe, la confiance et ses preuves, les dépendances et leur réponse, les garde-fous, le hors périmètre, les actions hors produit (marketing, ventes&nbsp;: qui, quand, calées après la mise en production)</li>
+              <li><strong>Investissement</strong>&nbsp;: un tableau estimé / réel (équipe en lingots, externe et run en euros, gain&nbsp;: KPI de départ → cible). La colonne «&nbsp;Estimé&nbsp;» se remplit avant le développement&nbsp;; pendant la delivery, la ligne Équipe reprend la jauge d'appétit du portefeuille&nbsp;; le reste se remplit à la revue. Dessous, le critère d'arrêt et la date de revue, le délai d'effet attendu et la date de mesure de l'effet (voir «&nbsp;Quand l'effet tarde&nbsp;»), puis la décision et la leçon (voir «&nbsp;Maîtriser la performance&nbsp;»)</li>
+              <li><strong>Étapes, preuves et points de décision</strong>&nbsp;: pour un chantier de plusieurs trimestres qui a le statut «&nbsp;effet différé&nbsp;», un tableau avec une ligne par étape&nbsp;: ce qu'on livre, la mesure de performance, le point de décision et le lien aux OKR (voir «&nbsp;Quand l'effet tarde&nbsp;»)</li>
+              <li><strong>Où on en est</strong>&nbsp;: le statut (Identifié · Discovery · Delivery · Mesure), les décisions passées, la prochaine décision avec sa date</li>
+              <li><strong>Les stories</strong>&nbsp;: une vue de la base Backlog filtrée sur l'initiative, avec le statut et l'avancement de chaque élément (ici en texte simple)</li>
+            </ul>
+          </div>
+        </details>
+
+        <p class="chapitre__retour"><a href="/gabarits/">← Voir les 37 gabarits du guide</a></p>
+
+      </div>
+    </article>
+
+    <section class="section section--nuit" aria-label="Contact et liens">
+      <div class="conteneur">
+        <div class="appel">
+          <p class="appel__texte">Pour accéder au guide complet ou pour échanger&nbsp;:</p>
+          <a class="bouton" href="/contact/">
+            <span aria-hidden="true">📩</span> Écrivez-moi
+          </a>
+        </div>
+
+        <ul class="liens">
+          <li><a class="lien-interne" href="/">Le guide</a></li>
+          <li><a class="lien-interne" href="/chapitres/">Chapitres</a></li>
+          <li><a class="lien-interne" href="/gabarits/">Gabarits</a></li>
+          <li><a class="lien-interne" href="/modeles/">Modèles Notion</a></li>
+          <li><a class="lien-interne" href="/fiches/">Fiches bibliographiques</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <p>Sylvain Lemonnier · Guide Pratique de Product Management · Novembre 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>
