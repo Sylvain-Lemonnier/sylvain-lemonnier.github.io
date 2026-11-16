@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="586" viewBox="0 0 1140 586">
+<rect width="1140" height="586" fill="#FFFFFF"/>
+<text x="20" y="34" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Les résultats clés du T4, fin octobre</text>
+<text x="20" y="58" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" fill="#6B7280">Semaine 5 sur 13 : la trajectoire attend 33 % du chemin parcouru · données fictives</text>
+<rect x="20" y="80" width="356" height="230" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+<rect x="20" y="80" width="6" height="230" rx="3" fill="#1F9D6B"/>
+<text x="40" y="106" font-family="Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6B7280">OBJECTIF 1</text>
+<text x="40" y="126" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Trajets quotidiens planifiés / semaine</text>
+<text x="40" y="168" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#1F2937">1,28 M</text>
+<text x="40" y="188" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">cible 1,38 M · départ 1,20 M</text>
+<rect x="40" y="202" width="316" height="8" rx="4" fill="#E5E7EB"/>
+<rect x="40" y="202" width="139.0" height="8" rx="4" fill="#1F9D6B"/>
+<line x1="145.3" x2="145.3" y1="198" y2="214" stroke="#1F2937" stroke-width="2"/>
+<text x="356" y="106" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1F9D6B" text-anchor="end">● Dans la trajectoire</text>
+<text x="356" y="168" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1F9D6B" text-anchor="end">44 % du chemin</text>
+<line x1="40.0" y1="290.0" x2="356.0" y2="230.0" stroke="#6B7280" stroke-dasharray="4 4"/>
+<line x1="40" x2="356" y1="230.0" y2="230.0" stroke="#1F9D6B" stroke-width="1.5"/>
+<polyline points="40.0,290.0 66.3,286.7 92.7,280.0 119.0,273.3 145.3,263.3" fill="none" stroke="#2F6FDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="145.3" cy="263.3" r="4.5" fill="#2F6FDE"/>
+<rect x="392" y="80" width="356" height="230" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+<rect x="392" y="80" width="6" height="230" rx="3" fill="#DC2626"/>
+<text x="412" y="106" font-family="Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6B7280">OBJECTIF 1</text>
+<text x="412" y="126" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Part des trajets multimodaux</text>
+<text x="412" y="168" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#1F2937">4,2 %</text>
+<text x="412" y="188" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">cible 7,0 % · départ 4,0 %</text>
+<rect x="412" y="202" width="316" height="8" rx="4" fill="#E5E7EB"/>
+<rect x="412" y="202" width="22.1" height="8" rx="4" fill="#DC2626"/>
+<line x1="517.3" x2="517.3" y1="198" y2="214" stroke="#1F2937" stroke-width="2"/>
+<text x="728" y="106" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#DC2626" text-anchor="end">● En retard</text>
+<text x="728" y="168" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#DC2626" text-anchor="end">7 % du chemin</text>
+<line x1="412.0" y1="290.0" x2="728.0" y2="230.0" stroke="#6B7280" stroke-dasharray="4 4"/>
+<line x1="412" x2="728" y1="230.0" y2="230.0" stroke="#1F9D6B" stroke-width="1.5"/>
+<polyline points="412.0,290.0 438.3,290.0 464.7,288.0 491.0,288.0 517.3,286.0" fill="none" stroke="#2F6FDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="517.3" cy="286.0" r="4.5" fill="#2F6FDE"/>
+<rect x="764" y="80" width="356" height="230" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+<rect x="764" y="80" width="6" height="230" rx="3" fill="#1F9D6B"/>
+<text x="784" y="106" font-family="Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6B7280">OBJECTIF 1</text>
+<text x="784" y="126" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Utilisateurs avec un trajet favori</text>
+<text x="784" y="168" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#1F2937">26 %</text>
+<text x="784" y="188" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">cible 35 % · départ 22 %</text>
+<rect x="784" y="202" width="316" height="8" rx="4" fill="#E5E7EB"/>
+<rect x="784" y="202" width="98.0" height="8" rx="4" fill="#1F9D6B"/>
+<line x1="889.3" x2="889.3" y1="198" y2="214" stroke="#1F2937" stroke-width="2"/>
+<text x="1100" y="106" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1F9D6B" text-anchor="end">● Dans la trajectoire</text>
+<text x="1100" y="168" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1F9D6B" text-anchor="end">31 % du chemin</text>
+<line x1="784.0" y1="290.0" x2="1100.0" y2="230.0" stroke="#6B7280" stroke-dasharray="4 4"/>
+<line x1="784" x2="1100" y1="230.0" y2="230.0" stroke="#1F9D6B" stroke-width="1.5"/>
+<polyline points="784.0,290.0 810.3,285.4 836.7,280.8 863.0,276.2 889.3,271.5" fill="none" stroke="#2F6FDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="889.3" cy="271.5" r="4.5" fill="#2F6FDE"/>
+<rect x="20" y="326" width="356" height="230" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+<rect x="20" y="326" width="6" height="230" rx="3" fill="#D97706"/>
+<text x="40" y="352" font-family="Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6B7280">OBJECTIF 2</text>
+<text x="40" y="372" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Trajets domicile-travail en voiture / semaine</text>
+<text x="40" y="414" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#1F2937">386 000</text>
+<text x="40" y="434" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">cible 418 000 · départ 380 000</text>
+<rect x="40" y="448" width="316" height="8" rx="4" fill="#E5E7EB"/>
+<rect x="40" y="448" width="50.6" height="8" rx="4" fill="#D97706"/>
+<line x1="145.3" x2="145.3" y1="444" y2="460" stroke="#1F2937" stroke-width="2"/>
+<text x="356" y="352" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">● À surveiller</text>
+<text x="356" y="414" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#D97706" text-anchor="end">16 % du chemin</text>
+<line x1="40.0" y1="536.0" x2="356.0" y2="476.0" stroke="#6B7280" stroke-dasharray="4 4"/>
+<line x1="40" x2="356" y1="476.0" y2="476.0" stroke="#1F9D6B" stroke-width="1.5"/>
+<polyline points="40.0,536.0 66.3,534.4 92.7,531.3 119.0,529.7 145.3,526.5" fill="none" stroke="#2F6FDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="145.3" cy="526.5" r="4.5" fill="#2F6FDE"/>
+<rect x="392" y="326" width="356" height="230" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+<rect x="392" y="326" width="6" height="230" rx="3" fill="#D97706"/>
+<text x="412" y="352" font-family="Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6B7280">OBJECTIF 2</text>
+<text x="412" y="372" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Avis négatifs péages ou ZFE (30 j)</text>
+<text x="412" y="414" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#1F2937">158</text>
+<text x="412" y="434" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">cible 90 · départ 180</text>
+<rect x="412" y="448" width="316" height="8" rx="4" fill="#E5E7EB"/>
+<rect x="412" y="448" width="75.8" height="8" rx="4" fill="#D97706"/>
+<line x1="517.3" x2="517.3" y1="444" y2="460" stroke="#1F2937" stroke-width="2"/>
+<text x="728" y="352" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">● À surveiller</text>
+<text x="728" y="414" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#D97706" text-anchor="end">24 % du chemin</text>
+<line x1="412.0" y1="476.0" x2="728.0" y2="536.0" stroke="#6B7280" stroke-dasharray="4 4"/>
+<line x1="412" x2="728" y1="536.0" y2="536.0" stroke="#1F9D6B" stroke-width="1.5"/>
+<polyline points="412.0,476.0 438.3,478.7 464.7,482.7 491.0,486.0 517.3,490.7" fill="none" stroke="#2F6FDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="517.3" cy="490.7" r="4.5" fill="#2F6FDE"/>
+<rect x="764" y="326" width="356" height="230" rx="12" fill="#F9FAFB"/>
+<line x1="784" x2="812" y1="366" y2="366" stroke="#2F6FDE" stroke-width="3"/>
+<text x="824" y="370" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" fill="#1F2937">Valeur mesurée, semaine par semaine</text>
+<line x1="784" x2="812" y1="400" y2="400" stroke="#6B7280" stroke-dasharray="4 4" stroke-width="2"/>
+<text x="824" y="404" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" fill="#1F2937">Trajectoire pour atteindre la cible</text>
+<line x1="784" x2="812" y1="434" y2="434" stroke="#1F9D6B" stroke-width="3"/>
+<text x="824" y="438" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" fill="#1F2937">Cible de fin de trimestre</text>
+<line x1="798" x2="798" y1="459" y2="477" stroke="#1F2937" stroke-width="2"/>
+<text x="824" y="472" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" fill="#1F2937">Repère : où l'on devrait être aujourd'hui</text>
+<circle cx="790" cy="502" r="6" fill="#1F9D6B"/><text x="802" y="506" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#1F2937">Dans la trajectoire</text>
+<circle cx="960" cy="502" r="6" fill="#D97706"/><text x="972" y="506" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#1F2937">À surveiller</text>
+<circle cx="790" cy="526" r="6" fill="#DC2626"/><text x="802" y="530" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#1F2937">En retard</text>
+</svg>

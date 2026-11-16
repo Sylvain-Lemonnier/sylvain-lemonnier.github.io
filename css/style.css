@@ -1643,6 +1643,54 @@ p.parcours__statut {
   color: #2F6B4C !important;
 }
 
+/* Reporting : titres de rubrique dans le document */
+.chapitre h2.fiche__section {
+  margin: 2rem 0 0.75rem;
+  padding-top: 0;
+  border-top: none;
+  font-size: 1.3125rem;
+}
+
+.encadre .encadre__titre-section {
+  margin: 0 0 0.6rem;
+  padding: 0;
+  border: none;
+  font-size: 1.1875rem;
+  color: var(--nuit);
+}
+
+.encadre--neutre {
+  border-left-color: var(--organisation);
+  background: var(--organisation-clair);
+}
+
+.texte-vert {
+  color: #2F6B4C;
+}
+
+.texte-rouge {
+  color: #A3301F;
+}
+
+.trio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.trio .encadre {
+  margin: 0;
+}
+
+.apprentissage p {
+  margin: 0 0 0.6rem;
+}
+
+.apprentissage .citation {
+  margin: 0.75rem 0;
+}
+
 /* Jauge d'appétit consommé */
 .jauge {
   display: inline-block;
@@ -1766,7 +1814,8 @@ p.parcours__statut {
     grid-template-columns: 1fr 1fr;
   }
 
-  .parcours {
+  .parcours,
+  .trio {
     grid-template-columns: repeat(3, 1fr);
   }
 
