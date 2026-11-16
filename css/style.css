@@ -269,6 +269,15 @@ main:focus {
   color: var(--nuit);
 }
 
+.carte-chiffre p.carte-chiffre__lien {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.carte-chiffre__lien a {
+  color: var(--delivery-fonce);
+}
+
 .carte-chiffre__nombre {
   font-size: 2.5rem;
   font-weight: 800;
@@ -1316,6 +1325,52 @@ main:focus {
   color: var(--delivery-fonce);
 }
 
+/* ---------- Listes des annexes : chapitres, gabarits, modèles, fiches ---------- */
+.famille--metier {
+  --c: #448361;          /* vert des ouvrages « métier » dans Notion */
+  --c-clair: #EEF5F0;
+  --c-fonce: #2F6B4C;
+}
+
+.inventaire__intro {
+  font-style: italic;
+  color: var(--texte-discret);
+}
+
+.inventaire {
+  display: grid;
+  grid-template-columns: 1fr;   /* téléphone : un volet sous l'autre */
+  gap: 2rem;
+}
+
+.inventaire__titre {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--c);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: var(--c-fonce);
+}
+
+.inventaire__liste {
+  margin: 0;
+  padding-left: 1.75rem;
+}
+
+.inventaire__liste li {
+  margin-bottom: 0.3rem;
+  padding-left: 0.2rem;
+}
+
+.inventaire__liste li::marker {
+  color: var(--c-fonce);
+  font-weight: 700;
+}
+
+.inventaire__note {
+  color: var(--texte-discret);
+}
+
 /* ---------- 8. Pied de page ---------- */
 .pied {
   border-top: 1px solid #E5E5E3;
@@ -1354,6 +1409,11 @@ main:focus {
 @media (min-width: 48rem) {
   .intro {
     padding-top: 4.5rem;
+  }
+
+  .inventaire {
+    grid-template-columns: repeat(2, 1fr);   /* deux volets côte à côte, comme dans Notion */
+    gap: 2.5rem 3rem;
   }
 
   .intro p:first-child {
