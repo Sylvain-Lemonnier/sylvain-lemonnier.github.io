@@ -269,12 +269,32 @@ main:focus {
   color: var(--nuit);
 }
 
+/* Sous-grille : titres, textes et liens des quatre cartes alignés d'une carte à l'autre */
+@supports (grid-template-rows: subgrid) {
+  .carte-chiffre {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+}
+
 .carte-chiffre p.carte-chiffre__lien {
-  margin-top: 0.8rem;
+  align-self: start;
+  padding-top: 0.8rem;
   font-weight: 600;
 }
 
 .carte-chiffre__lien a {
+  color: var(--delivery-fonce);
+}
+
+.carte-chiffre p.carte-chiffre__exemple {
+  margin-top: 0.35rem;
+  color: var(--texte-discret);
+}
+
+.carte-chiffre__exemple a {
   color: var(--delivery-fonce);
 }
 
