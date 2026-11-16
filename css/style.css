@@ -1559,15 +1559,10 @@ main:focus {
 }
 
 .carte-icone__icone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-bottom: 0.75rem;
-  border-radius: 0.6rem;
-  background: var(--delivery-clair);
-  font-size: 1.3rem;
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-size: 1.5rem;     /* l'émoji seul, sans pastille de fond */
+  line-height: 1;
 }
 
 .carte-icone p.carte-icone__titre {
@@ -1757,6 +1752,148 @@ main:focus {
   background: #F1F1EF;
   font-size: 0.8125rem;
   color: var(--texte);
+}
+
+/* ---------- Page À propos ---------- */
+.entete-page--profil {
+  padding-bottom: 3rem;
+}
+
+.profil {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.profil__photo {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;          /* la photo carrée devient ronde */
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.profil__texte .entete-page__surtitre {
+  margin: 0;
+}
+
+.profil__nom {
+  margin: 0.3rem 0 0.25rem;
+  font-size: 2.25rem;
+  line-height: 1.15;
+}
+
+.profil__role {
+  margin: 0 0 1.1rem;
+  font-size: 1.125rem;
+  color: #EC9A55;
+}
+
+.profil__reperes {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.profil__reperes li {
+  padding: 0.35rem 0.8rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--nuit-discret);
+  font-size: 0.9063rem;
+}
+
+.profil__reperes strong {
+  color: #FFFFFF;
+}
+
+.profil__boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Bouton secondaire : contour clair, sur fond bleu nuit */
+.bouton--secondaire {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  padding: calc(0.8rem - 2px) calc(1.6rem - 2px);
+}
+
+.bouton--secondaire:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Les évolutions du métier, reliées par des flèches */
+.evolutions {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0;
+  margin: 0.5rem 0 1.75rem;
+  padding: 0;
+}
+
+.evolutions li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--nuit);
+}
+
+.evolutions li:not(:last-child)::after {
+  content: "→";
+  margin: 0 0.45rem;
+  font-weight: 400;
+  color: var(--fleche);
+}
+
+.evolutions__etiquette {
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+  background: #F1F1EF;
+}
+
+.evolutions__actuelle .evolutions__etiquette {
+  background: var(--discovery-fonce);   /* orange foncé : contraste suffisant avec le texte blanc */
+  color: #FFFFFF;
+}
+
+.section__titre--phrase {
+  max-width: 24em;
+  font-size: 1.5rem !important;
+  line-height: 1.35;
+}
+
+/* Cartes de même largeur, sans carte élargie */
+.cartes-icone--egales .carte-icone--vedette {
+  grid-column: auto !important;
+}
+
+/* Cartes aux couleurs des volets */
+.carte-icone--volet {
+  border-top: 4px solid var(--c);
+}
+
+.carte-icone--volet .carte-icone__titre {
+  color: var(--c-fonce) !important;
+}
+
+.lien-suite {
+  margin: 1.25rem 0 0;
+  font-weight: 600;
+}
+
+.lien-suite a {
+  color: var(--delivery-fonce);
 }
 
 /* ---------- Pages d'exemple : extraits du guide ---------- */
@@ -2153,6 +2290,19 @@ p.parcours__statut {
 /* ---------- 9. Adaptation tablette et ordinateur ---------- */
 /* Tablette (≥ 36rem) */
 @media (min-width: 36rem) {
+  /* À propos : photo à gauche du nom */
+  .profil {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.25rem;
+  }
+
+  .profil__photo {
+    flex: none;
+    width: 10.5rem;
+    height: 10.5rem;
+  }
+
   .chiffres__liste {
     grid-template-columns: repeat(2, 1fr);   /* tablette : 2 × 2 */
   }

@@ -29,7 +29,7 @@
 
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <header class="entete-page">
+  <header class="entete-page entete-page--profil">
     <div class="conteneur">
       <a class="entete-page__retour" href="/">← Guide Pratique de Product Management</a>
       <div class="hero__volets" aria-hidden="true">
@@ -38,67 +38,93 @@
         <span class="volet volet--delivery"></span>
         <span class="volet volet--organisation"></span>
       </div>
-      <h1 class="entete-page__titre">À propos de l'auteur</h1>
+
+      <div class="profil">
+        <img class="profil__photo" src="/images/photo-sylvain-portrait.jpg" width="286" height="286" alt="Portrait de Sylvain Lemonnier">
+        <div class="profil__texte">
+          <p class="entete-page__surtitre">À propos de l'auteur</p>
+          <h1 class="profil__nom">Sylvain Lemonnier</h1>
+          <p class="profil__role">Product leader et coach en product management</p>
+          <ul class="profil__reperes">
+            <li><strong>20+ ans</strong> de product management</li>
+            <li>Équipes de <strong>10 à 25</strong> personnes</li>
+          </ul>
+          <div class="profil__boutons">
+            <a class="bouton" href="/contact/"><span aria-hidden="true">📩</span> Écrivez-moi</a>
+            <a class="bouton bouton--secondaire" href="/cv/">Mon CV</a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
   <main id="contenu" tabindex="-1">
 
-    <section class="section section--premiere">
+    <section class="section section--premiere" aria-label="Parcours">
       <div class="conteneur">
-        <div class="auteur auteur--clair">
-          <img class="auteur__photo" src="/images/photo-sylvain.jpg" width="167" height="167" alt="Portrait de Sylvain Lemonnier">
-          <div>
-            <h2 class="auteur__nom">Sylvain Lemonnier</h2>
-            <p>En plus de vingt ans, j'ai vu le métier se réinventer plusieurs fois, et j'ai fait évoluer mes équipes avec lui&nbsp;: l'agilité, l'UX, l'analyse data, le design thinking, la discovery, l'agilité à l'échelle, et aujourd'hui l'IA. J'ai mis en œuvre ces pratiques au moment où elles prenaient forme et s'imposaient dans la profession, pas une fois devenue la norme.</p>
-            <p>J'ai occupé des postes de Chief Product Officer et de Head of Product, notamment chez Qwant, Mappy et RATP. J'ai encadré des équipes de 10 à 25 personnes (Product Owners, PM, designers, UX, data), et accompagné leur passage d'une logique de projets à une logique de produit.</p>
-          </div>
-        </div>
+        <p class="chapeau parcours-texte">En plus de vingt ans, j'ai vu le métier se réinventer plusieurs fois, et j'ai fait évoluer mes équipes avec lui&nbsp;:</p>
 
-        <p class="section__texte">Aujourd'hui, je souhaite mettre cette expérience au service d'une entreprise&nbsp;:</p>
+        <ol class="evolutions" aria-label="Les évolutions du métier, dans l'ordre">
+          <li><span class="evolutions__etiquette">Agilité</span></li>
+          <li><span class="evolutions__etiquette">UX</span></li>
+          <li><span class="evolutions__etiquette">Analyse data</span></li>
+          <li><span class="evolutions__etiquette">Design thinking</span></li>
+          <li><span class="evolutions__etiquette">Discovery</span></li>
+          <li><span class="evolutions__etiquette">Agilité à l'échelle</span></li>
+          <li class="evolutions__actuelle"><span class="evolutions__etiquette">IA</span></li>
+        </ol>
 
-        <ul class="collaborations collaborations--clair">
-          <li class="collaboration"><strong>En rejoignant une direction produit</strong> comme Chief Product Officer ou Head of Product</li>
-          <li class="collaboration"><strong>En direction produit de transition ou à temps partagé</strong> le temps de structurer ou de recruter</li>
-          <li class="collaboration"><strong>Ou en mission</strong> structurer une fonction produit, coacher les PM et les PO, installer des rituels, une roadmap et un pilotage qui produisent des décisions, intégrer l'IA dans le quotidien des équipes produit</li>
+        <p class="section__texte">J'ai mis en œuvre ces pratiques au moment où elles prenaient forme et s'imposaient dans la profession, pas une fois devenue la norme.</p>
+        <p class="section__texte">J'ai occupé des postes de Chief Product Officer et de Head of Product, notamment chez Qwant, Mappy et RATP. J'ai encadré des équipes de 10 à 25 personnes (Product Owners, PM, designers, UX, data), et accompagné leur passage d'une logique de projets à une logique de produit.</p>
+      </div>
+    </section>
+
+    <section class="section section--grise" aria-labelledby="titre-ensemble">
+      <div class="conteneur">
+        <h2 id="titre-ensemble" class="section__titre">Trois façons de travailler ensemble</h2>
+        <ul class="cartes-icone cartes-icone--3 cartes-icone--egales">
+          <li class="carte-icone">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🧭</span><span class="carte-icone__titre">En rejoignant une direction produit</span></p>
+            <p class="carte-icone__texte">comme Chief Product Officer ou Head of Product</p>
+          </li>
+          <li class="carte-icone">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">⏱️</span><span class="carte-icone__titre">En direction produit de transition ou à temps partagé</span></p>
+            <p class="carte-icone__texte">le temps de structurer ou de recruter</p>
+          </li>
+          <li class="carte-icone">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🛠️</span><span class="carte-icone__titre">Ou en mission</span></p>
+            <p class="carte-icone__texte">structurer une fonction produit, coacher les PM et les PO, installer des rituels, une roadmap et un pilotage qui produisent des décisions, intégrer l'IA dans le quotidien des équipes produit</p>
+          </li>
         </ul>
+        <p class="lien-suite"><a href="/missions/">Missions produit et coaching&nbsp;→</a></p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="titre-apport">
       <div class="conteneur">
         <h2 id="titre-apport" class="section__titre">Ce que j'apporte</h2>
-
-        <table class="tableau">
-          <thead>
-            <tr>
-              <th scope="col">Domaine</th>
-              <th scope="col">En pratique</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Stratégie et objectifs</th>
-              <td>Construire la vision, choisir une North Star, structurer les OKR et les relier à la roadmap</td>
-            </tr>
-            <tr>
-              <th scope="row">Discovery</th>
-              <td>Installer un contact régulier avec les utilisateurs, tester les idées avant de les construire, savoir renoncer</td>
-            </tr>
-            <tr>
-              <th scope="row">Delivery et pilotage</th>
-              <td>Des rituels qui produisent des décisions, un backlog unique et ordonné, des instances de pilotage claires</td>
-            </tr>
-            <tr>
-              <th scope="row">Culture data</th>
-              <td>Mesurer ce que chaque feature change, fiabiliser les données, décider à partir d'analyses plutôt que de tableaux de bord</td>
-            </tr>
-            <tr>
-              <th scope="row">IA et LLM</th>
-              <td>Intégrer l'IA dans les produits et dans le travail de l'équipe produit</td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="cartes-icone cartes-icone--3 cartes-icone--egales">
+          <li class="carte-icone carte-icone--volet famille--vision">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🎯</span><span class="carte-icone__titre">Stratégie et objectifs</span></p>
+            <p class="carte-icone__texte">Construire la vision, choisir une North Star, structurer les OKR et les relier à la roadmap</p>
+          </li>
+          <li class="carte-icone carte-icone--volet famille--discovery">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🔍</span><span class="carte-icone__titre">Discovery</span></p>
+            <p class="carte-icone__texte">Installer un contact régulier avec les utilisateurs, tester les idées avant de les construire, savoir renoncer</p>
+          </li>
+          <li class="carte-icone carte-icone--volet famille--delivery">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🚀</span><span class="carte-icone__titre">Delivery et pilotage</span></p>
+            <p class="carte-icone__texte">Des rituels qui produisent des décisions, un backlog unique et ordonné, des instances de pilotage claires</p>
+          </li>
+          <li class="carte-icone carte-icone--volet famille--organisation">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">📊</span><span class="carte-icone__titre">Culture data</span></p>
+            <p class="carte-icone__texte">Mesurer ce que chaque feature change, fiabiliser les données, décider à partir d'analyses plutôt que de tableaux de bord</p>
+          </li>
+          <li class="carte-icone carte-icone--volet famille--metier">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🤖</span><span class="carte-icone__titre">IA et LLM</span></p>
+            <p class="carte-icone__texte">Intégrer l'IA dans les produits et dans le travail de l'équipe produit</p>
+          </li>
+        </ul>
       </div>
     </section>
 
