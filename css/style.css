@@ -1371,6 +1371,182 @@ main:focus {
   color: var(--texte-discret);
 }
 
+.inventaire__liste a,
+.inventaire__exemple a {
+  color: var(--delivery-fonce);
+  font-weight: 600;
+}
+
+.inventaire__exemple {
+  margin: 2.5rem 0 0;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: #F7F7F5;
+  border: 1px solid #E8E8E6;
+  font-size: 1.0625rem;
+}
+
+/* ---------- Pages d'exemple : extraits du guide ---------- */
+.entete-page__surtitre {
+  margin: 1.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--nuit-discret);
+}
+
+.entete-page__surtitre + .entete-page__titre {
+  margin-top: 0.4rem;
+}
+
+/* Colonne de lecture : environ 75 caractères par ligne */
+.chapitre {
+  max-width: 50rem;
+}
+
+.chapitre > p,
+.chapitre > ul,
+.chapitre > ol {
+  margin: 0 0 1.25rem;
+}
+
+.chapitre > ul,
+.chapitre > ol {
+  padding-left: 1.4rem;
+}
+
+.chapitre li {
+  margin-bottom: 0.5rem;
+}
+
+.chapitre h2 {
+  margin: 3rem 0 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid #EDEDEB;
+  font-size: 1.625rem;
+  line-height: 1.25;
+  color: var(--nuit);
+}
+
+.chapitre h3 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--nuit);
+}
+
+.chapitre .tableau {
+  margin: 0 0 1.5rem;
+}
+
+.chapitre__schema {
+  margin: 0.5rem 0 2rem;
+}
+
+.chapitre__retour {
+  margin-top: 3rem !important;
+  font-weight: 600;
+}
+
+.chapitre__retour a {
+  color: var(--delivery-fonce);
+}
+
+.tableau__precision {
+  font-weight: 400;
+  color: var(--texte-discret);
+}
+
+/* Encadrés colorés, repris des callouts Notion */
+.chapitre .encadre {
+  margin: 0 0 1.75rem;
+}
+
+.encadre p + p,
+.encadre p + ul,
+.encadre ul + p {
+  margin-top: 0.75rem;
+}
+
+.encadre ul,
+.encadre ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.encadre li {
+  margin-bottom: 0.35rem;
+}
+
+.encadre li:last-child {
+  margin-bottom: 0;
+}
+
+.encadre ol {
+  margin-top: 0.35rem;
+}
+
+p.encadre__titre {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--nuit);
+}
+
+.encadre__precision {
+  font-weight: 400;
+}
+
+.encadre--essentiel {
+  border-left-color: #C9A227;
+  background: #FBF6E4;
+}
+
+.encadre--exemple {
+  border-left-color: #448361;
+  background: #EEF5F0;
+}
+
+.encadre--alerte {
+  border-left-color: #C4554D;
+  background: #FBEDEB;
+}
+
+.encadre--repere {
+  border-left-color: var(--delivery);
+  background: var(--delivery-clair);
+}
+
+.encadre--gabarit {
+  border-left-color: var(--discovery);
+  background: var(--discovery-clair);
+}
+
+/* Checklist : cases à cocher dessinées, non interactives */
+.checklist {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1.05em;
+  height: 1.05em;
+  border: 2px solid var(--organisation);
+  border-radius: 0.25em;
+}
+
+.lectures li {
+  margin-bottom: 0.6rem;
+}
+
 /* ---------- 8. Pied de page ---------- */
 .pied {
   border-top: 1px solid #E5E5E3;

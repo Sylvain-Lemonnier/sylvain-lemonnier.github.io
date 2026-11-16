@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Le Backlog · Guide Pratique de Product Management</title>
+  <meta name="description" content="Un chapitre complet du Guide Pratique de Product Management : un seul backlog ordonné, des sprints à deux ou trois objectifs, l'estimation en tailles de t-shirt et l'appétit en lingots, la priorisation et la santé du backlog.">
+  <meta name="author" content="Sylvain Lemonnier">
+  <link rel="canonical" href="https://sylvain-lemonnier.github.io/exemples/backlog/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Guide Pratique de Product Management">
+  <meta property="og:title" content="Le Backlog · Guide Pratique de Product Management">
+  <meta property="og:description" content="Un chapitre complet du guide : backlog unique, sprints, tailles de t-shirt, lingots, priorisation et checklist.">
+  <meta property="og:url" content="https://sylvain-lemonnier.github.io/exemples/backlog/">
+  <meta property="og:image" content="https://sylvain-lemonnier.github.io/images/apercu-linkedin.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Guide Pratique de Product Management, par Sylvain Lemonnier">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete-page">
+    <div class="conteneur">
+      <a class="entete-page__retour" href="/chapitres/">← Liste des chapitres</a>
+      <div class="hero__volets" aria-hidden="true">
+        <span class="volet volet--vision"></span>
+        <span class="volet volet--discovery"></span>
+        <span class="volet volet--delivery"></span>
+        <span class="volet volet--organisation"></span>
+      </div>
+      <p class="entete-page__surtitre">Extrait du guide · Chapitre du volet Delivery</p>
+      <h1 class="entete-page__titre"><span aria-hidden="true">📋</span> Le Backlog</h1>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <article class="section section--premiere">
+      <div class="conteneur chapitre">
+
+        <aside class="encadre encadre--essentiel" aria-label="L'essentiel">
+          <p class="encadre__titre">L'essentiel</p>
+          <ul>
+            <li>Tenir un seul backlog, ordonné, qui rend visible tout le travail (stories, discovery, anomalies, dette, data) et que le PO et le tech manager priorisent ensemble</li>
+            <li>Rythmer le delivery par des sprints courts, chacun avec deux ou trois objectifs ordonnés, en estimant en tailles de t-shirt pour arbitrer plutôt que pour promettre</li>
+            <li>Garder le backlog sain&nbsp;: un à deux sprints de stories prêtes, un affinage continu, un ménage régulier</li>
+          </ul>
+        </aside>
+
+        <h2>À quoi sert le backlog</h2>
+
+        <p>Le backlog est <strong>l'expression opérationnelle de la roadmap</strong>. La roadmap dit <em>pourquoi</em> et <em>quoi</em> à moyen terme&nbsp;; le backlog organise le <em>comment</em> et le <em>quand</em> à court terme. Il sert à organiser la conception et le développement, à prioriser (donc à déprioriser&nbsp;: choisir, c'est renoncer) et à répartir la charge de l'équipe.</p>
+
+        <table class="tableau">
+          <thead>
+            <tr><th scope="col"><span class="visuellement-cache">Critère</span></th><th scope="col">Roadmap</th><th scope="col">Backlog</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Horizon</th><td data-libelle="Roadmap">Trimestres, semestre</td><td data-libelle="Backlog">Le sprint en cours et les suivants</td></tr>
+            <tr><th scope="row">Granularité</th><td data-libelle="Roadmap">Initiatives, objectifs</td><td data-libelle="Backlog">Stories, anomalies, tâches</td></tr>
+            <tr><th scope="row">Question traitée</th><td data-libelle="Roadmap">Pourquoi et quoi</td><td data-libelle="Backlog">Comment et quand</td></tr>
+            <tr><th scope="row">Mise à jour</th><td data-libelle="Roadmap">À chaque revue de roadmap</td><td data-libelle="Backlog">En continu</td></tr>
+          </tbody>
+        </table>
+
+        <aside class="encadre encadre--essentiel">
+          <p>Un backlog n'est pas une liste de souhaits&nbsp;: c'est <strong>une liste ordonnée de paris</strong>. Chaque élément en haut est un choix explicite au détriment de ceux qui sont en dessous. Le niveau stratégique est traité dans la page «&nbsp;La roadmap&nbsp;».</p>
+        </aside>
+
+        <h2>Un seul backlog, trois zones</h2>
+
+        <p>Deux listes séparées (backlog produit et backlog de sprint, ou un backlog par métier) obligent à arbitrer deux fois et laissent des éléments vivre dans l'une sans jamais remonter dans l'autre. Une <strong>liste unique et ordonnée</strong> rend chaque arbitrage visible&nbsp;: tout ce qui est au-dessus passe avant tout ce qui est en dessous. Sa précision décroît à mesure que l'on descend&nbsp;:</p>
+
+        <table class="tableau">
+          <thead>
+            <tr><th scope="col">Zone</th><th scope="col">Contenu</th><th scope="col">Niveau de détail</th><th scope="col">Exemple dans l'app de navigation</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">En cours</th><td data-libelle="Contenu">Les stories du sprint</td><td data-libelle="Niveau de détail">Prêtes, l'équipe s'est engagée</td><td data-libelle="Exemple">Éviter les péages</td></tr>
+            <tr><th scope="row">Prêtes</th><td data-libelle="Contenu">Les stories affinées pour les un ou deux prochains sprints</td><td data-libelle="Niveau de détail">Definition of Ready validée</td><td data-libelle="Exemple">Afficher les zones à faibles émissions</td></tr>
+            <tr><th scope="row">À qualifier</th><td data-libelle="Contenu">Demandes, idées, gros sujets pas encore découpés</td><td data-libelle="Niveau de détail">Une phrase, une estimation grossière</td><td data-libelle="Exemple">Guidage en réalité augmentée</td></tr>
+          </tbody>
+        </table>
+
+        <p>Les éléments remontent d'une zone à l'autre au fil du grooming, ou sont purgés s'ils n'ont plus de sens. C'est le backlog <strong>DEEP</strong> de Roman Pichler (Backlog DEEP)&nbsp;: détaillé à proportion de sa proximité, estimé, émergent et ordonné. Le <em>product backlog</em> et le <em>sprint backlog</em> du Scrum Guide (Rôles, rituels et artefacts de Scrum) sont les mêmes zones vues autrement.</p>
+
+        <aside class="encadre encadre--gabarit" aria-label="Gabarit">
+          <p class="encadre__titre"><span aria-hidden="true">🧾</span> Gabarit&nbsp;: Backlog</p>
+          <p><em>Un backlog complet tenu dans une base&nbsp;: stories, discovery, anomalies, dette, spikes et tâches data des trois équipes, reliés aux initiatives de la roadmap, avec les vues backlog ordonné, par zone, sprint 41, par initiative et par type.</em></p>
+          <p>Modèles associés&nbsp;: User story, Item discovery, Anomalie, Spike, Dette technique, Tâche data</p>
+        </aside>
+
+        <h3>Ce qu'on y met</h3>
+
+        <p>Tout le travail qui fait avancer le produit&nbsp;: une dette technique ou un travail data «&nbsp;hors backlog&nbsp;» est un travail invisible, donc jamais arbitré.</p>
+
+        <table class="tableau">
+          <thead>
+            <tr><th scope="col">Type d'élément</th><th scope="col">Exemple dans l'app de navigation</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">User story <span class="tableau__precision">(nouvelle valeur)</span></th><td>Proposer un itinéraire évitant les péages</td></tr>
+            <tr><th scope="row">Item discovery</th><td>Tester sur prototype l'option «&nbsp;éviter les péages&nbsp;» avec 20 conducteurs</td></tr>
+            <tr><th scope="row">Anomalie</th><td>Le guidage se coupe à la sortie d'un tunnel (voir la grille gravité × fréquence dans la page «&nbsp;Assurer la qualité&nbsp;»)</td></tr>
+            <tr><th scope="row">Dette technique</th><td>Remplacer la librairie de cartographie qui n'est plus maintenue</td></tr>
+            <tr><th scope="row">Spike <span class="tableau__precision">(investigation limitée dans le temps)</span></th><td>2 jours pour évaluer la faisabilité d'un guidage en réalité augmentée</td></tr>
+            <tr><th scope="row">Tâche data / tracking</th><td>Instrumenter les recalculs d'itinéraire pour mesurer la qualité du guidage</td></tr>
+          </tbody>
+        </table>
+
+        <p>Le travail récurrent (reporting, préparation des comités, veille, rituels) n'y figure pas&nbsp;: il est déduit de la capacité, comme les congés ou le support.</p>
+
+        <h3>Le travail produit et design au backlog</h3>
+
+        <p>Les études, prototypes, parcours UX, specs et tests utilisateurs ont leur place au backlog, au même titre que les stories&nbsp;: leur travail devient visible, les développeurs peuvent demander à y être associés, et produit, design et tech forment une seule équipe.</p>
+
+        <ul>
+          <li><strong>Le critère d'entrée</strong>&nbsp;: un artefact partageable (étude restituée, prototype testé, spec relue) ou une décision (go, pivot, abandon). Les micro-tâches restent hors backlog, comme les sous-tâches techniques des développeurs, qui vivent dans la checklist Tâches de la story</li>
+          <li><strong>Le rattachement</strong>&nbsp;: chaque item discovery et chaque story est rattaché à son initiative, qui est le pivot entre la roadmap et le backlog. On voit ainsi d'un coup d'œil le chemin complet, de l'étude au code, et ce qui est commun à toutes les stories (objectif, parcours, appétit) vit dans la fiche initiative. Dans les outils comme Jira, l'initiative correspond souvent à un Epic</li>
+          <li><strong>Les règles du jeu</strong>&nbsp;: les items discovery s'estiment en tailles de t-shirt, avec une durée maximale&nbsp;; ils ne sont «&nbsp;Terminés&nbsp;» qu'une fois l'artefact partagé, la décision documentée et au moins un développeur associé&nbsp;; «&nbsp;Abandonné&nbsp;» est une issue réussie</li>
+          <li><strong>Le suivi du design</strong>&nbsp;: une story qui demande du design porte un second statut, le <em>Statut design</em> (À faire, En cours, En revue, Validé), vide quand elle n'en demande pas. Les designers travaillent un ou deux sprints en avance et suivent leurs sujets sur un board tiré du même backlog, dans l'ordre de priorité du produit&nbsp;: pas de backlog design à part. <em>En revue</em> est le moment où le produit et la tech vérifient la faisabilité avant de figer&nbsp;; <em>Validé</em> correspond au critère de la Definition of Ready «&nbsp;les maquettes sont validées par le design, le produit et la tech&nbsp;»</li>
+        </ul>
+
+        <figure class="capture capture--schema chapitre__schema">
+          <div class="capture__cadre">
+            <img src="/images/schemas/hierarchie-roadmap-initiative-story.svg" width="780" height="494" loading="lazy"
+                 alt="Schéma en trois niveaux sur l'exemple de l'application de navigation. La roadmap du T4 (pourquoi et quoi) contient trois initiatives : maîtriser le coût des trajets du quotidien en voiture, réduire les retards en transports, simplifier les trajets du quotidien. La fiche initiative « Maîtriser le coût des trajets du quotidien en voiture », pivot entre roadmap et backlog, porte l'objectif (KR +10 % de trajets domicile-travail), le parcours utilisateur commun à toutes les stories et l'appétit. Le backlog (comment et quand) contient ses items discovery (UX-2026-14 entretiens conducteurs, UX-2026-17 test du prototype, NAV-210 spike du calcul sans péage) et ses stories delivery (NAV-212 éviter les péages, NAV-219 coût selon le véhicule, NAV-224 CarPlay et Android Auto). L'initiative porte à la fois sa discovery et ses stories : on voit le chemin complet, de l'étude au code.">
+            <button type="button" class="capture__agrandir" data-plein-ecran="/images/schemas/hierarchie-roadmap-initiative-story.svg">
+              <span aria-hidden="true">⤢</span> Agrandir<span class="visuellement-cache"> le schéma roadmap, initiative, backlog</span>
+            </button>
+          </div>
+        </figure>
+
+        <aside class="encadre encadre--alerte" aria-label="Le piège à éviter">
+          <p class="encadre__titre"><span aria-hidden="true">⚠️</span> Le piège à éviter&nbsp;: le mini-waterfall</p>
+          <p>Découper en tickets peut encourager les passages de relais&nbsp;: le design termine, puis la tech démarre. Or, comme le rappelle Marty Cagan (Les quatre risques&nbsp;; dual track), le design n'est pas une phase&nbsp;: produit, design et tech explorent ensemble dès le départ. La règle d'association d'un développeur sert de garde-fou.</p>
+        </aside>
+
+        <h2>La cadence&nbsp;: les sprints</h2>
+
+        <p>Un projet mené d'une traite ne révèle ses problèmes qu'à la fin. Des itérations courtes donnent un rendez-vous régulier pour regarder ce qui a été produit et décider de continuer, de réorienter ou d'arrêter (voir la page «&nbsp;Maîtriser la performance&nbsp;»). Au pire, on n'a perdu qu'une itération.</p>
+
+        <ul>
+          <li><strong>Deux semaines</strong> pour un produit installé&nbsp;: assez pour livrer quelque chose qui se montre, assez court pour qu'une erreur de direction coûte peu. Trois à quatre semaines en phase d'initialisation, le temps que l'équipe et l'architecture se stabilisent</li>
+          <li><strong>Une durée fixe</strong>&nbsp;: c'est la régularité qui permet de mesurer et de prévoir</li>
+          <li><strong>Six rituels</strong> rythment le sprint (grooming, sprint planning, daily, point de mi-sprint, démo, rétro), décrits dans la page «&nbsp;Les rituels du sprint&nbsp;»</li>
+        </ul>
+
+        <h3>Deux ou trois objectifs de sprint</h3>
+
+        <p>Chaque sprint affiche ses objectifs, chacun en une phrase qui dit <strong>l'enjeu et le résultat recherché</strong>, pas la liste des features. On les <strong>ordonne</strong>, pour savoir lequel protéger en cas d'imprévu, et on les <strong>limite</strong> à deux ou trois&nbsp;: au-delà, on retombe dans une liste de tâches.</p>
+
+        <aside class="encadre encadre--exemple" aria-label="Exemple">
+          <p class="encadre__titre"><span aria-hidden="true">🧭</span> Exemple&nbsp;: objectifs de sprint</p>
+          <ul>
+            <li><span aria-hidden="true">❌</span><span class="visuellement-cache">À éviter&nbsp;:</span> «&nbsp;Faire les stories NAV-212, NAV-215, NAV-219 et NAV-224&nbsp;»</li>
+            <li><span aria-hidden="true">✅</span><span class="visuellement-cache">À faire&nbsp;:</span> Trois objectifs, par ordre d'importance&nbsp;:
+              <ol>
+                <li>Un utilisateur peut choisir d'éviter les péages et voit l'impact sur la durée de son trajet</li>
+                <li>Le taux de crash au lancement de l'app repasse sous 0,5&nbsp;%</li>
+                <li>On sait mesurer le nombre de recalculs d'itinéraire par trajet</li>
+              </ol>
+            </li>
+          </ul>
+          <p>En milieu de sprint, l'anomalie de l'objectif 2 se révèle plus lourde que prévu. L'équipe renonce à l'écran de préférences avancées, livre l'évitement des péages et reporte l'instrumentation au sprint suivant&nbsp;: les deux objectifs prioritaires sont tenus.</p>
+        </aside>
+
+        <h3>Scrum, Kanban ou Scrumban</h3>
+
+        <p>La méthode se choisit selon la nature du travail de l'équipe, pas par souci d'homogénéité.</p>
+
+        <table class="tableau">
+          <thead>
+            <tr><th scope="col"><span class="visuellement-cache">Critère</span></th><th scope="col">Scrum</th><th scope="col">Kanban</th><th scope="col">Scrumban</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Cadence</th><td data-libelle="Scrum">Sprints de durée fixe</td><td data-libelle="Kanban">Flux continu</td><td data-libelle="Scrumban">Itérations, contenu ajustable</td></tr>
+            <tr><th scope="row">Estimation</th><td data-libelle="Scrum">Fine</td><td data-libelle="Kanban">Peu ou pas</td><td data-libelle="Scrumban">Grossière</td></tr>
+            <tr><th scope="row">Engagement</th><td data-libelle="Scrum">Sur le contenu du sprint</td><td data-libelle="Kanban">Sur le flux, pas sur un contenu</td><td data-libelle="Scrumban">Sur les objectifs, pas sur chaque story</td></tr>
+            <tr><th scope="row">Régulation</th><td data-libelle="Scrum">Capacité du sprint</td><td data-libelle="Kanban">Limites de travail en cours</td><td data-libelle="Scrumban">Les deux</td></tr>
+            <tr><th scope="row">Indicateur principal</th><td data-libelle="Scrum">Vélocité</td><td data-libelle="Kanban">Lead time, débit</td><td data-libelle="Scrumban">Débit</td></tr>
+            <tr><th scope="row">Adapté quand…</th><td data-libelle="Scrum">Construction de features, besoin de prévisibilité</td><td data-libelle="Kanban">Beaucoup d'imprévus&nbsp;: run, support, maintenance</td><td data-libelle="Scrumban">Produit en régime de croisière, mêlant projets et imprévus</td></tr>
+          </tbody>
+        </table>
+
+        <p>Le détail des méthodes est dans les fiches Rôles, rituels et artefacts de Scrum, Limites de travail en cours, métriques de flux et Hybridation de Scrum et Kanban.</p>
+
+        <aside class="encadre encadre--exemple" aria-label="Exemple">
+          <p class="encadre__titre"><span aria-hidden="true">🧭</span> Exemple&nbsp;: deux équipes, deux méthodes</p>
+          <ul>
+            <li>L'équipe <strong>Guidage</strong> construit le mode covoiturage&nbsp;: Scrum, sprints de 2 semaines, pour donner de la prévisibilité au lancement</li>
+            <li>L'équipe <strong>Données cartographiques</strong> traite les signalements de routes fermées et les mises à jour de fournisseurs&nbsp;: Kanban, avec 3 tâches en cours au plus par personne, car le volume entrant est imprévisible</li>
+          </ul>
+        </aside>
+
+        <h2>Estimer en tailles de t-shirt</h2>
+
+        <p>Estimer ne sert pas à prédire une date au jour près, mais à <strong>prioriser</strong> (comparer la valeur à ce qu'un sujet coûte), à <strong>ne pas submerger l'équipe</strong>, à <strong>piloter</strong> sans promettre de date, et à <strong>savoir quand découper</strong>. Un ordre de grandeur suffit.</p>
+
+        <p><strong>La position du guide.</strong> Ni points de story ni vélocité, qui se gonfle dès qu'elle devient un objectif. Des <strong>tailles de t-shirt</strong> pour les stories et les items discovery. Une taille est une durée&nbsp;: le temps qu'y passe celui qui la porte, un développeur pour une story. L'appétit des initiatives, lui, ne s'estime pas&nbsp;: il s'investit, en lingots (voir plus bas).</p>
+
+        <table class="tableau">
+          <thead>
+            <tr><th scope="col">Taille</th><th scope="col">Durée</th><th scope="col">Pour quoi</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">XS</th><td data-libelle="Durée">Une journée ou moins</td><td data-libelle="Pour quoi">Une story</td></tr>
+            <tr><th scope="row">S</th><td data-libelle="Durée">Un à deux jours</td><td data-libelle="Pour quoi">Une story</td></tr>
+            <tr><th scope="row">M</th><td data-libelle="Durée">Trois à cinq jours</td><td data-libelle="Pour quoi">Une story</td></tr>
+            <tr><th scope="row">L</th><td data-libelle="Durée">Un sprint (deux semaines)</td><td data-libelle="Pour quoi">La plus grosse story possible</td></tr>
+            <tr><th scope="row">Au-delà</th><td data-libelle="Durée">Plus d'un sprint</td><td data-libelle="Pour quoi">Ce n'est plus une story&nbsp;: à découper</td></tr>
+          </tbody>
+        </table>
+
+        <p>Une règle en découle&nbsp;: <strong>une story ne dépasse pas L</strong>, sinon elle est découpée (voir «&nbsp;Découper une story trop grosse&nbsp;» dans la page «&nbsp;Écrire une user story&nbsp;»).</p>
+
+        <p><strong>Un calibrage propre à chaque équipe.</strong> Chaque équipe choisit dans son historique une ou deux stories de référence par taille, puis estime par comparaison. Elle fixe aussi le <strong>plafond</strong> de ce qu'un sprint peut absorber, une fois déduits les rituels, le support et le travail récurrent&nbsp;: un plafond, pas un objectif, et jamais comparé d'une équipe à l'autre.</p>
+
+        <figure class="capture capture--schema chapitre__schema">
+          <div class="capture__cadre">
+            <img src="/images/schemas/tailles-et-lingots.svg" width="1100" height="330" loading="lazy"
+                 alt="Deux échelles : estimer les stories, investir dans les initiatives. Une taille dit le temps d'un développeur sur une story ; un lingot, un sprint de toute l'équipe sur une initiative. Stories, en tailles de t-shirt jusqu'à L : XS une journée ou moins, S un à deux jours, M trois à cinq jours, L un sprint de deux semaines, au-delà il faut découper. Initiatives, l'appétit en lingots : 1 lingot pour 1 sprint d'équipe, 2 lingots pour 2 sprints, 3 lingots pour 3 sprints, le maximum.">
+            <button type="button" class="capture__agrandir" data-plein-ecran="/images/schemas/tailles-et-lingots.svg">
+              <span aria-hidden="true">⤢</span> Agrandir<span class="visuellement-cache"> le schéma des tailles et des lingots</span>
+            </button>
+          </div>
+        </figure>
+
+        <aside class="encadre encadre--exemple" aria-label="Exemple">
+          <p class="encadre__titre"><span aria-hidden="true">🧭</span> Exemple&nbsp;: le calibrage de l'équipe Guidage <span class="encadre__precision">(5 développeurs, sprint de 2 semaines)</span></p>
+          <ul>
+            <li><strong>XS</strong>&nbsp;: corriger le libellé de l'écran d'arrivée&nbsp;; ajouter un événement de tracking</li>
+            <li><strong>S</strong>&nbsp;: afficher l'heure d'arrivée estimée pendant le guidage</li>
+            <li><strong>M</strong>&nbsp;: afficher le montant des péages selon la classe du véhicule (NAV-219)</li>
+            <li><strong>L</strong>&nbsp;: éviter les péages, recalcul en guidage compris (NAV-212)</li>
+            <li><strong>Au-delà de L</strong>&nbsp;: le mode covoiturage, qui mobilise toute l'équipe plusieurs sprints. C'est une initiative, avec un appétit de 2 lingots, à découper en stories</li>
+            <li><strong>Plafond du sprint</strong>&nbsp;: environ 2 L, 3 M et 4 S. Au-delà, on retire un sujet plutôt que d'en ajouter un</li>
+          </ul>
+        </aside>
+
+        <p>Le planning poker fonctionne aussi avec des tailles&nbsp;; les pratiques d'estimation, et l'alternative #NoEstimates, sont détaillées dans Points de story, planning poker, vélocité.</p>
+
+        <h3>L'appétit des initiatives en lingots</h3>
+
+        <p>Une initiative ne s'estime pas comme une story&nbsp;: on décide d'abord ce qu'on est prêt à y investir, puis on conçoit la solution qui tient dans cet investissement. C'est l'<strong>appétit</strong>, au sens de Ryan Singer (Appétit, betting table, coupe-circuit, hill chart). Le guide l'exprime en <strong>lingots</strong>&nbsp;:</p>
+
+        <ul>
+          <li><strong>Un lingot vaut un sprint de l'équipe</strong>. Une initiative en vaut 1, 2 ou 3, jamais plus&nbsp;: au-delà, ce sont plusieurs initiatives, chacune avec sa décision</li>
+          <li><strong>Une équipe dispose d'environ 6 lingots par trimestre</strong>, une fois déduits le support et le travail récurrent. Les répartir est l'objet du comité roadmap</li>
+          <li><strong>Un lingot se convertit en euros</strong> pour parler budget&nbsp;: c'est le coût de l'équipe pendant un sprint. Le coût externe (licences, prestataires, calcul) s'ajoute à part, en euros</li>
+        </ul>
+
+        <aside class="encadre encadre--exemple" aria-label="Exemple">
+          <p class="encadre__titre"><span aria-hidden="true">🧭</span> Exemple&nbsp;: les lingots de l'équipe Guidage au T4</p>
+          <p>Six lingots disponibles&nbsp;: 2 pour l'évitement des péages, 2 pour l'affichage des zones à faibles émissions, échéance réglementaire oblige, et 2 pour la discovery du mode covoiturage. Le mode sombre n'en obtient aucun ce trimestre&nbsp;: c'est écrit, avec sa date de réexamen.</p>
+        </aside>
+
+        <h2>Prioriser le backlog</h2>
+
+        <h3>Qui décide</h3>
+
+        <p>L'ordre du backlog est décidé <strong>conjointement par le product owner</strong>, qui porte la valeur et les objectifs, <strong>et le tech manager</strong>, qui porte la faisabilité, la capacité et la santé technique. Ils écoutent tout le monde, mais la décision leur revient&nbsp;: un backlog ordonné par consensus élargi finit ordonné par celui qui parle le plus fort. En cas de désaccord, le <strong>CPO et le CTO</strong> tranchent, vite. Une escalade fréquente signale des critères de priorisation mal partagés.</p>
+
+        <h3>Les critères et les méthodes</h3>
+
+        <p>On arbitre entre la <strong>valeur</strong> attendue, le <strong>coût du retard</strong> (ce que l'on perd chaque semaine où l'élément n'est pas livré), la <strong>réduction de risque</strong>, les <strong>dépendances</strong> et l'<strong>effort</strong>.</p>
+
+        <table class="tableau">
+          <thead>
+            <tr><th scope="col">Méthode</th><th scope="col">Principe</th><th scope="col">Quand l'utiliser</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">RICE</th><td data-libelle="Principe">(Reach × Impact × Confidence) / Effort</td><td data-libelle="Quand l'utiliser">Comparer des features entre elles, avec des données d'usage</td></tr>
+            <tr><th scope="row">Coût du retard rapporté à la taille <span class="tableau__precision">(WSJF dans SAFe)</span></th><td data-libelle="Principe">Ce que l'on perd par semaine d'attente / taille</td><td data-libelle="Quand l'utiliser">Quand le facteur temps est déterminant (échéances, saisonnalité)</td></tr>
+            <tr><th scope="row">MoSCoW</th><td data-libelle="Principe">Must / Should / Could / Won't</td><td data-libelle="Quand l'utiliser">Cadrer le périmètre d'une release ou d'un projet</td></tr>
+            <tr><th scope="row">Kano</th><td data-libelle="Principe">Attentes de base / performance / enthousiasme</td><td data-libelle="Quand l'utiliser">Équilibrer le contenu entre fondamentaux et différenciation</td></tr>
+          </tbody>
+        </table>
+
+        <figure class="capture capture--schema chapitre__schema">
+          <div class="capture__cadre">
+            <img src="/images/schemas/cout-du-retard.svg" width="780" height="450" loading="lazy"
+                 alt="Graphique de la valeur obtenue selon la date de livraison, d'aujourd'hui à dans 3 mois. Le mode sombre garde la même valeur dans 3 mois : il peut attendre. Les zones à faibles émissions perdent de la valeur après l'entrée en vigueur de la ZFE, dans 6 semaines : avis négatifs et amendes pour les utilisateurs. La zone entre les deux courbes représente ce que coûte le retard. RICE compare la valeur ; le coût du retard dit aussi ce que l'on perd à attendre.">
+            <button type="button" class="capture__agrandir" data-plein-ecran="/images/schemas/cout-du-retard.svg">
+              <span aria-hidden="true">⤢</span> Agrandir<span class="visuellement-cache"> le graphique du coût du retard</span>
+            </button>
+          </div>
+        </figure>
+
+        <aside class="encadre encadre--exemple" aria-label="Exemple">
+          <p class="encadre__titre"><span aria-hidden="true">🧭</span> Exemple&nbsp;: le coût du retard l'emporte</p>
+          <p>Deux candidats pour le prochain sprint&nbsp;: le <strong>mode sombre</strong> (très demandé, aucune urgence) et l'<strong>affichage des zones à faibles émissions</strong> (valeur moyenne, mais une nouvelle ZFE entre en vigueur dans 11 semaines, et chaque jour sans la feature génère ensuite avis négatifs et amendes). Avec RICE, le mode sombre passe devant&nbsp;; en rapportant le coût du retard à la taille, ce sont les ZFE, et c'est le bon choix&nbsp;: le mode sombre aura la même valeur dans deux mois, pas les ZFE.</p>
+        </aside>
+
+        <h3>Allouer la capacité et savoir dire non</h3>
+
+        <ul>
+          <li><strong>Réserver une part de la capacité par type de travail</strong>, plutôt que de faire concourir features, dette et anomalies sur la même échelle (les features gagnent toujours). Repère souvent cité&nbsp;: 70&nbsp;% features, 20&nbsp;% dette, 10&nbsp;% anomalies, à ajuster selon l'état du produit</li>
+          <li><strong>Sortir du haut du backlog</strong> ce qui n'entrera pas dans les prochains mois&nbsp;: une zone d'attente (<em>icebox</em>) ou un refus explicite. Un «&nbsp;non&nbsp;» argumenté et rapide vaut mieux qu'un «&nbsp;oui&nbsp;» jamais tenu</li>
+        </ul>
+
+        <h2>Composer le sprint</h2>
+
+        <p>La planification fait passer des stories de la zone «&nbsp;Prêtes&nbsp;» à la zone «&nbsp;En cours&nbsp;»&nbsp;:</p>
+
+        <ul>
+          <li><strong>Finir</strong> ce qui n'a pas été fini, si on l'a décidé&nbsp;: une story non terminée est réévaluée comme si elle était nouvelle, pas reportée automatiquement. L'effort déjà consenti ne justifie pas à lui seul de continuer</li>
+          <li><strong>Initier</strong> de nouvelles stories, dans l'ordre du backlog</li>
+          <li><strong>Tenir compte de la capacité réelle</strong>&nbsp;: congés, astreintes, support, rituels. Une équipe de 6 sur 2 semaines ne dispose pas de 60 jours de développement</li>
+        </ul>
+
+        <aside class="encadre encadre--repere" aria-label="Repère">
+          <p class="encadre__titre"><span aria-hidden="true">📌</span> Le taux de report, un indicateur simple</p>
+          <p>Un taux élevé et constant de stories reportées d'un sprint à l'autre signale presque toujours des stories trop grosses, pas vraiment prêtes, une capacité surestimée, ou trop d'imprévus non budgétés.</p>
+        </aside>
+
+        <h2>Écrire et découper les stories</h2>
+
+        <p>Une story ne se limite pas à une phrase et à une description fonctionnelle&nbsp;: elle dit aussi pourquoi on la fait, comment on la construit et comment on saura qu'elle a marché. Une story qui ne tient pas dans un sprint se découpe verticalement. Le format, INVEST, le découpage SPIDR, la spécification, les critères d'acceptation, le cadrage technique, la mesure, la Definition of Ready et la Definition of Done sont détaillés dans la page «&nbsp;Écrire une user story&nbsp;».</p>
+
+        <aside class="encadre encadre--repere" aria-label="Repère">
+          <p class="encadre__titre"><span aria-hidden="true">📌</span> Le story mapping</p>
+          <p>Pour découper un projet entier sans perdre la vue d'ensemble, la <strong>story map</strong> de Jeff Patton (Story mapping, walking skeleton) dispose horizontalement les étapes du parcours utilisateur, et verticalement les stories de chaque étape, de la plus essentielle à la plus accessoire. Une ligne tracée à travers la carte définit la première release&nbsp;: le plus petit parcours complet qui apporte de la valeur.</p>
+        </aside>
+
+        <h2>Garder un backlog sain</h2>
+
+        <ul>
+          <li><strong>Affiner en continu</strong>, pas la veille de la planification&nbsp;: environ 10&nbsp;% de la capacité de l'équipe, pour garder <strong>un à deux sprints</strong> de stories prêtes. Moins, l'équipe attend&nbsp;; plus, les stories préparées vieillissent</li>
+          <li><strong>Faire le ménage</strong>&nbsp;: revoir régulièrement le bas du backlog et archiver ce qui n'a plus de sens. Si le besoin est réel, il reviendra. Un backlog court se lit et se priorise&nbsp;; un backlog long se subit</li>
+          <li><strong>Se faire aider par l'IA</strong> pour rédiger une première version de story, la vérifier au regard d'INVEST et de la Definition of Ready, proposer des découpages ou détecter des doublons, sans se passer de la relecture du PO (voir la page «&nbsp;L'IA dans le process&nbsp;»)</li>
+        </ul>
+
+        <table class="tableau">
+          <thead>
+            <tr><th scope="col">Indicateur de santé</th><th scope="col">Ce qu'il révèle</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Volume du backlog</th><td>Au-delà de quelques centaines d'éléments, il n'est plus priorisé, il est stocké</td></tr>
+            <tr><th scope="row">Âge des éléments</th><td>Un élément non touché depuis 6 mois a peu de chances d'être fait un jour</td></tr>
+            <tr><th scope="row">Réserve de stories prêtes</th><td>En nombre de sprints&nbsp;: entre 1 et 2 est un bon équilibre</td></tr>
+            <tr><th scope="row">Taux de report</th><td>Part des stories non terminées en fin de sprint</td></tr>
+            <tr><th scope="row">Lead time</th><td>Délai entre l'entrée d'une demande et sa livraison</td></tr>
+            <tr><th scope="row">Répartition par type</th><td>Features, anomalies, dette&nbsp;: la répartition réelle correspond-elle à celle décidée&nbsp;?</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Signaux d'alerte</h2>
+
+        <table class="tableau tableau--signaux">
+          <thead>
+            <tr><th scope="col">Signal</th><th scope="col">Ce que ça révèle</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Le backlog dépasse quelques centaines d'éléments</th><td>Il sert de liste de souhaits, plus d'outil de décision</td></tr>
+            <tr><th scope="row">Les mêmes stories sont reportées sprint après sprint</th><td>Stories trop grosses, pas prêtes, ou capacité surestimée</td></tr>
+            <tr><th scope="row">La dette technique n'apparaît jamais dans le backlog</th><td>Elle est traitée en cachette, ou pas du tout</td></tr>
+            <tr><th scope="row">Les estimations servent à mesurer ou comparer la performance de l'équipe</th><td>Les estimations vont gonfler et perdre toute utilité</td></tr>
+            <tr><th scope="row">L'ordre du backlog change à chaque demande d'un dirigeant</th><td>Absence de critères de priorisation partagés</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Checklist</h2>
+
+        <ul class="checklist">
+          <li>Le backlog est unique et ordonné&nbsp;; le PO et le tech manager en assument l'ordre, avec une escalade CPO / CTO en cas de désaccord</li>
+          <li>Il contient tous les types de travail&nbsp;: features, discovery, anomalies, dette, spikes, data</li>
+          <li>Le travail discovery y figure au niveau artefact ou décision&nbsp;; le travail récurrent est déduit de la capacité</li>
+          <li>La méthode (Scrum, Kanban, Scrumban) est choisie selon la nature du travail de l'équipe</li>
+          <li>Chaque sprint a deux ou trois objectifs, ordonnés et formulés en résultats, pas en features</li>
+          <li>Les stories sont estimées en tailles de t-shirt, avec un calibrage et un plafond propres à l'équipe&nbsp;; l'appétit des initiatives est fixé en lingots</li>
+          <li>Les critères de priorisation sont explicites et partagés</li>
+          <li>Chaque story est complète et tient dans un sprint (voir la checklist de la page «&nbsp;Écrire une user story&nbsp;»)</li>
+          <li>L'affinage est continu, avec un à deux sprints de stories prêtes</li>
+          <li>Le backlog est régulièrement purgé</li>
+        </ul>
+
+        <h2>Pour aller plus loin</h2>
+
+        <ul class="lectures">
+          <li>Ken Schwaber et Jeff Sutherland, <em>Rôles, rituels et artefacts de Scrum</em> (<em>The Scrum Guide</em>, édition 2020, disponible en français)&nbsp;: les rôles, rituels et artefacts</li>
+          <li>Roman Pichler, <em>Backlog DEEP</em> (<em>Agile Product Management with Scrum</em>)&nbsp;: le backlog DEEP et le rôle du product owner</li>
+          <li>Mike Cohn, <em>Points de story, planning poker, vélocité</em> (<em>Agile Estimating and Planning</em>)&nbsp;: points de story, planning poker, vélocité</li>
+          <li>David J. Anderson, <em>Limites de travail en cours, métriques de flux</em> (<em>Kanban</em>)&nbsp;: limites de travail en cours et métriques de flux</li>
+          <li>Corey Ladas, <em>Hybridation de Scrum et Kanban</em> (<em>Scrumban</em>)&nbsp;: l'hybridation des deux méthodes</li>
+          <li>Donald Reinertsen, <em>Coût du retard (Cost of Delay), CD3</em> (<em>The Principles of Product Development Flow</em>)&nbsp;: le coût du retard, à l'origine du WSJF</li>
+          <li>Jeff Patton, <em>Story mapping, walking skeleton</em> (<em>User Story Mapping</em>)&nbsp;: découper sans perdre la vue d'ensemble</li>
+          <li>Marty Cagan, <em>Les quatre risques&nbsp;; dual track</em> (<em>Inspired</em>)&nbsp;: la discovery menée ensemble par produit, design et tech</li>
+          <li>Jeff Patton, <em>Dual Track Development is not Duel Track</em> (article)&nbsp;: articuler discovery et delivery</li>
+          <li>Teresa Torres, <em>Opportunity Solution Tree, discovery continue</em> (<em>Continuous Discovery Habits</em>)&nbsp;: l'Opportunity Solution Tree</li>
+          <li>Ryan Singer, <em>Appétit, betting table, coupe-circuit, hill chart</em> (<em>Shape Up</em>, Basecamp, disponible gratuitement en ligne)&nbsp;: la notion d'appétit</li>
+        </ul>
+
+        <p class="chapitre__retour"><a href="/chapitres/">← Voir les 25 chapitres du guide</a></p>
+
+      </div>
+    </article>
+
+    <section class="section section--nuit" aria-label="Contact et liens">
+      <div class="conteneur">
+        <div class="appel">
+          <p class="appel__texte">Pour accéder au guide complet ou pour échanger&nbsp;:</p>
+          <a class="bouton" href="/contact/">
+            <span aria-hidden="true">📩</span> Écrivez-moi
+          </a>
+        </div>
+
+        <ul class="liens">
+          <li><a class="lien-interne" href="/">Le guide</a></li>
+          <li><a class="lien-interne" href="/chapitres/">Chapitres</a></li>
+          <li><a class="lien-interne" href="/gabarits/">Gabarits</a></li>
+          <li><a class="lien-interne" href="/modeles/">Modèles Notion</a></li>
+          <li><a class="lien-interne" href="/fiches/">Fiches bibliographiques</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <p>Sylvain Lemonnier · Guide Pratique de Product Management · Novembre 2026</p>
+    </div>
+  </footer>
+
+  <dialog class="visionneuse" aria-label="Schéma en plein écran">
+    <button type="button" class="visionneuse__fermer" aria-label="Fermer">✕</button>
+    <div class="visionneuse__zone">
+      <img class="visionneuse__image" alt="">
+    </div>
+    <p class="visionneuse__aide">
+      <span class="aide--souris">Cliquez sur l'image pour zoomer · Échap pour fermer</span>
+      <span class="aide--tactile">Touchez l'image pour zoomer · ✕ pour fermer</span>
+    </p>
+  </dialog>
+
+  <script src="/js/visionneuse.js"></script>
+</body>
+</html>
