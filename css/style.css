@@ -742,6 +742,404 @@ main:focus {
   padding: 0 1.1rem 1.1rem;
 }
 
+/* ----- Schéma interactif des bases Notion (à l'essai) -----
+   Une carte à deux faces dans un espace en perspective :
+   recto = le portefeuille d'initiatives et les quatre familles,
+   verso = le schéma de la famille choisie. js/bases.js retourne la carte. */
+.bases {
+  margin: 0 0 2rem;
+}
+
+.bases__famille--pilotage {
+  --c: var(--vision);
+  --c-clair: var(--vision-clair);
+  --c-fonce: var(--vision-fonce);
+}
+
+.bases__famille--organisation {
+  --c: var(--organisation);
+  --c-clair: var(--organisation-clair);
+  --c-fonce: var(--organisation-fonce);
+}
+
+.bases__famille--discovery {
+  --c: var(--discovery);
+  --c-clair: var(--discovery-clair);
+  --c-fonce: var(--discovery-fonce);
+}
+
+.bases__famille--delivery {
+  --c: var(--delivery);
+  --c-clair: var(--delivery-clair);
+  --c-fonce: var(--delivery-fonce);
+}
+
+/* L'espace 3D : la perspective donne la profondeur au retournement */
+.bases__scene {
+  perspective: 1400px;
+}
+
+.bases__carte {
+  --retourne: 0deg;
+  --incl-x: 0deg;
+  --incl-y: 0deg;
+  display: grid;                 /* les deux faces se superposent dans la même case */
+  transform-style: preserve-3d;
+  transform: rotateX(var(--incl-x)) rotateY(calc(var(--retourne) + var(--incl-y)));
+  transition: transform 0.9s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.bases__carte.retournee {
+  --retourne: 180deg;
+}
+
+/* Pendant l'inclinaison au survol, la carte suit la souris sans retard */
+.bases__carte.suit {
+  transition: transform 0.15s ease-out;
+}
+
+.bases__face {
+  position: relative;
+  padding: 1.25rem 1rem 1.5rem;
+  border: 1px solid #E8E8E6;
+  border-radius: 1rem;
+  background: linear-gradient(160deg, #FFFFFF 0%, #F4F4F2 100%);
+  box-shadow: 0 18px 40px rgba(31, 41, 55, 0.12), 0 2px 6px rgba(31, 41, 55, 0.06);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* Chaque face est « aplatie » (sinon son dos resterait visible) mais garde
+     sa propre perspective : ses cartes gardent leur relief */
+  perspective: 900px;
+}
+
+/* Montage recto-verso seulement avec le script ; sans lui, le verso s'affiche sous le recto */
+.bases--js .bases__face {
+  grid-area: 1 / 1;
+  transform: translateZ(1px);    /* chaque face décollée d'un pixel vers l'avant… */
+}
+
+.bases--js .bases__face--verso {
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+/* …et la carte elle-même ignore la souris : seules ses faces la reçoivent */
+.bases--js .bases__carte {
+  pointer-events: none;
+}
+
+.bases--js .bases__face {
+  pointer-events: auto;
+}
+
+/* La face cachée est dans le même plan que la face visible : sans cette règle,
+   la souris la « touche » par endroits et le survol des boutons clignote.
+   On la masque donc vraiment, au moment où la carte est de profil (mi-retournement). */
+.bases--js .bases__face {
+  transition: visibility 0s linear 0.45s;
+}
+
+.bases--js .bases__carte:not(.retournee) .bases__face--verso,
+.bases--js .bases__carte.retournee .bases__face--recto {
+  visibility: hidden;
+}
+
+.bases__face + .bases__face {
+  margin-top: 1rem;
+}
+
+.bases--js .bases__face + .bases__face {
+  margin-top: 0;
+}
+
+.bases__aide,
+.bases__legende {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--texte-discret);
+  text-align: center;
+}
+
+.bases__legende {
+  margin: 1.25rem 0 0;
+  font-size: 0.8125rem;
+}
+
+/* --- Recto : l'étoile ---
+   Téléphone : deux familles en haut, le pivot au milieu, deux en bas */
+.bases__etoile {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "pilotage  organisation"
+    "pivot     pivot"
+    "discovery delivery";
+  gap: 2.75rem 1rem;
+}
+
+.bases__liens {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.bases__lien {
+  stroke: #C9C8C4;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.bases__famille--pilotage     { grid-area: pilotage; }
+.bases__famille--organisation { grid-area: organisation; }
+.bases__famille--discovery    { grid-area: discovery; }
+.bases__famille--delivery     { grid-area: delivery; }
+
+/* Les cartes flottent légèrement au-dessus du fond (translateZ, dans la perspective de la face) */
+.bases__famille {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  min-height: 4.5rem;
+  padding: 0.75rem 0.5rem;
+  border: 2px solid var(--c);
+  border-left-width: 6px;
+  border-radius: 0.6rem;
+  background: #FFFFFF;
+  color: var(--c-fonce);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  transform: translateZ(18px);
+  box-shadow: 0 8px 18px rgba(31, 41, 55, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.bases__famille:hover,
+.bases__famille:focus-visible {
+  background: var(--c-clair);
+  transform: translateZ(30px) translateY(-3px);
+  box-shadow: 0 14px 28px rgba(31, 41, 55, 0.16);
+}
+
+.bases__nom {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.bases__nombre {
+  font-size: 0.8125rem;
+}
+
+.bases__nombre::after {
+  content: " →";
+}
+
+.bases__pivot {
+  position: relative;
+  grid-area: pivot;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.9rem 1.25rem;
+  border-radius: 0.6rem;
+  background: linear-gradient(150deg, #A97CC4 0%, var(--vision) 55%, #835A9C 100%);
+  color: #FFFFFF;
+  text-align: center;
+  transform: translateZ(30px);
+  box-shadow: 0 14px 30px rgba(154, 108, 181, 0.4);
+}
+
+.bases__pivot strong {
+  font-size: 1.0625rem;
+  line-height: 1.25;
+}
+
+.bases__pivot span {
+  font-size: 0.8125rem;
+  opacity: 0.9;
+}
+
+/* --- Verso : la famille choisie --- */
+.bases__entete {
+  margin: 0 0 0.75rem;
+}
+
+.bases__retour {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid #D6D5D1;
+  border-radius: 2rem;
+  background: #FFFFFF;
+  color: var(--texte);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bases__retour:hover {
+  background: #F1F1EF;
+}
+
+.bases__titre-vue {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--c-fonce);
+}
+
+.bases__graphe {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 0.6rem;
+  align-items: center;
+}
+
+.bases__graphe .bases__lien {
+  stroke: var(--c);
+  stroke-opacity: 0.55;
+}
+
+.noeud {
+  position: relative;
+  justify-self: center;
+  max-width: 100%;
+  padding: 0.55rem 0.6rem;
+  border: 2px solid var(--c);
+  border-left-width: 5px;
+  border-radius: 0.5rem;
+  background: #FFFFFF;
+  color: var(--c-fonce);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  transform: translateZ(14px);
+  box-shadow: 0 8px 18px rgba(31, 41, 55, 0.12);
+}
+
+.noeud--pivot {
+  border-color: transparent;
+  background: linear-gradient(150deg, #A97CC4 0%, var(--vision) 55%, #835A9C 100%);
+  color: #FFFFFF;
+  box-shadow: 0 10px 22px rgba(154, 108, 181, 0.4);
+}
+
+.noeud--centre {
+  background: var(--c-clair);
+  transform: translateZ(24px);
+}
+
+/* Relations en toutes lettres : lues par les lecteurs d'écran, cachées à l'écran
+   une fois le script chargé (sans script, elles restent visibles en liste) */
+.bases--js .bases__aretes {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --- Animations (désactivées si le visiteur a demandé moins d'animations) --- */
+@media (prefers-reduced-motion: no-preference) {
+  /* Recto : construction à l'arrivée à l'écran */
+  .bases--anime .bases__pivot,
+  .bases--anime .bases__famille {
+    opacity: 0;
+    transform: translateZ(-120px);
+    transition: opacity 0.5s ease, transform 0.6s ease;
+  }
+
+  .bases--anime .bases__etoile .bases__lien {
+    stroke-dasharray: var(--longueur);
+    stroke-dashoffset: var(--longueur);
+    transition: stroke-dashoffset 0.6s ease;
+  }
+
+  .bases--anime.visible .bases__pivot {
+    opacity: 1;
+    transform: translateZ(30px);
+  }
+
+  .bases--anime.visible .bases__famille {
+    opacity: 1;
+    transform: translateZ(18px);
+  }
+
+  .bases--anime.visible .bases__etoile .bases__lien {
+    stroke-dashoffset: 0;
+  }
+
+  /* Verso : les bases surgissent de la profondeur, puis les liens se tracent */
+  .bases__vue.entree .noeud {
+    opacity: 0;
+    transform: translateZ(-150px);
+  }
+
+  .bases__vue.entree .bases__graphe .bases__lien {
+    stroke-dasharray: var(--longueur);
+    stroke-dashoffset: var(--longueur);
+  }
+
+  .bases__vue .noeud {
+    transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.3, 1.4, 0.5, 1);
+  }
+
+  .bases__vue .bases__graphe .bases__lien {
+    stroke-dasharray: var(--longueur);
+    transition: stroke-dashoffset 0.5s ease;
+  }
+}
+
+/* Ordinateur : une vraie étoile, le pivot au centre */
+@media (min-width: 48rem) {
+  .bases__face {
+    padding: 1.75rem 2rem 2rem;
+  }
+
+  .bases__etoile {
+    grid-template-columns: 1fr 1.1fr 1fr;
+    grid-template-areas:
+      "pilotage  .     organisation"
+      ".         pivot .           "
+      "discovery .     delivery    ";
+    gap: 1.5rem 2rem;
+  }
+
+  .bases__famille {
+    min-height: 5rem;
+  }
+
+  .bases__pivot {
+    padding: 1.1rem 1.5rem;
+  }
+
+  .bases__pivot strong {
+    font-size: 1.1875rem;
+  }
+
+  .bases__graphe {
+    max-width: 44rem;
+    margin: 0 auto;
+    gap: 3rem 2.5rem;
+  }
+
+  .noeud {
+    padding: 0.7rem 1rem;
+    font-size: 0.9375rem;
+  }
+}
+
 /* Encadré du cas fil rouge */
 .encadre {
   margin: 0 0 3rem;

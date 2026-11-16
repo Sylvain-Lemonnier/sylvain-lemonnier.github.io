@@ -238,6 +238,135 @@
 
         <p class="section__texte">Le guide ne se contente pas d'être lu&nbsp;: c'est un espace de travail.</p>
 
+        <!-- Schéma interactif des bases Notion (à l'essai, au-dessus de l'ancienne version).
+             Une carte à deux faces : l'étoile au recto, le schéma d'une famille au verso.
+             js/bases.js retourne la carte et trace les liens. -->
+        <div class="bases">
+          <h3 class="exemple__titre">Des bases reliées autour d'un pivot&nbsp;: le portefeuille d'initiatives</h3>
+
+          <div class="bases__scene">
+            <div class="bases__carte">
+
+              <!-- Recto : les quatre familles autour du pivot -->
+              <div class="bases__face bases__face--recto">
+                <p class="bases__aide">Choisissez une famille pour voir ses bases et leurs relations.</p>
+                <div class="bases__etoile">
+                  <svg class="bases__liens" aria-hidden="true" focusable="false"></svg>
+
+                  <button type="button" class="bases__famille bases__famille--pilotage" data-famille="pilotage">
+                    <span class="bases__nom">Pilotage</span>
+                    <span class="bases__nombre">2 bases</span>
+                  </button>
+                  <button type="button" class="bases__famille bases__famille--organisation" data-famille="organisation">
+                    <span class="bases__nom">Organisation</span>
+                    <span class="bases__nombre">3 bases</span>
+                  </button>
+
+                  <div class="bases__pivot">
+                    <strong>Portefeuille d'initiatives</strong>
+                    <span>la base pivot</span>
+                  </div>
+
+                  <button type="button" class="bases__famille bases__famille--discovery" data-famille="discovery">
+                    <span class="bases__nom">Discovery</span>
+                    <span class="bases__nombre">3 bases</span>
+                  </button>
+                  <button type="button" class="bases__famille bases__famille--delivery" data-famille="delivery">
+                    <span class="bases__nom">Delivery et mesure</span>
+                    <span class="bases__nombre">8 bases</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Verso : le schéma de la famille choisie.
+                   Les relations sont aussi écrites en toutes lettres pour les lecteurs d'écran. -->
+              <div class="bases__face bases__face--verso">
+                <div class="bases__entete">
+                  <button type="button" class="bases__retour"><span aria-hidden="true">←</span> Retour<span class="visuellement-cache"> à toutes les familles</span></button>
+                </div>
+
+                <div class="bases__vue bases__famille--pilotage" data-famille="pilotage">
+                  <p class="bases__titre-vue">Pilotage</p>
+                  <div class="bases__graphe" aria-hidden="true">
+                    <svg class="bases__liens"></svg>
+                    <span class="noeud noeud--pivot" data-id="pivot" style="grid-area: 1 / 2">Portefeuille d'initiatives</span>
+                    <span class="noeud" data-id="okr" style="grid-area: 2 / 2">OKR</span>
+                    <span class="noeud" data-id="rc" style="grid-area: 3 / 2">Résultats clés</span>
+                  </div>
+                  <ul class="bases__aretes">
+                    <li data-de="okr" data-vers="pivot">OKR, reliés au portefeuille d'initiatives (propriété « OKR »)</li>
+                    <li data-de="rc" data-vers="okr">Résultats clés, reliés aux OKR (propriété « Objectif »)</li>
+                  </ul>
+                </div>
+
+                <div class="bases__vue bases__famille--organisation" data-famille="organisation">
+                  <p class="bases__titre-vue">Organisation</p>
+                  <div class="bases__graphe" aria-hidden="true">
+                    <svg class="bases__liens"></svg>
+                    <span class="noeud noeud--pivot" data-id="pivot" style="grid-area: 1 / 2">Portefeuille d'initiatives</span>
+                    <span class="noeud" data-id="pa" style="grid-area: 2 / 1">Points d'avancement</span>
+                    <span class="noeud" data-id="reu" style="grid-area: 2 / 2">Réunions</span>
+                    <span class="noeud" data-id="act" style="grid-area: 2 / 3">Pour action</span>
+                  </div>
+                  <ul class="bases__aretes">
+                    <li data-de="pa" data-vers="pivot">Points d'avancement, reliés au portefeuille d'initiatives (propriété « Initiatives »)</li>
+                    <li data-de="reu" data-vers="pivot">Réunions, reliées au portefeuille d'initiatives (propriété « Initiatives »)</li>
+                    <li data-de="act" data-vers="reu">Pour action, relié aux réunions (propriété « Réunion d'origine »)</li>
+                  </ul>
+                </div>
+
+                <div class="bases__vue bases__famille--discovery" data-famille="discovery">
+                  <p class="bases__titre-vue">Discovery</p>
+                  <div class="bases__graphe" aria-hidden="true">
+                    <svg class="bases__liens"></svg>
+                    <span class="noeud noeud--pivot" data-id="pivot" style="grid-area: 1 / 2">Portefeuille d'initiatives</span>
+                    <span class="noeud" data-id="tests" style="grid-area: 2 / 1">Tests</span>
+                    <span class="noeud" data-id="etudes" style="grid-area: 2 / 3">Études</span>
+                    <span class="noeud" data-id="ens" style="grid-area: 3 / 1 / 4 / 4">Enseignements</span>
+                  </div>
+                  <ul class="bases__aretes">
+                    <li data-de="tests" data-vers="pivot">Tests, reliés au portefeuille d'initiatives (propriété « Initiative »)</li>
+                    <li data-de="etudes" data-vers="pivot">Études, reliées au portefeuille d'initiatives (propriété « Initiatives »)</li>
+                    <li data-de="ens" data-vers="pivot">Enseignements, reliés au portefeuille d'initiatives (propriété « Initiatives »)</li>
+                    <li data-de="ens" data-vers="etudes">Enseignements, reliés aux études (propriété « Études »)</li>
+                  </ul>
+                </div>
+
+                <div class="bases__vue bases__famille--delivery" data-famille="delivery">
+                  <p class="bases__titre-vue">Delivery et mesure</p>
+                  <div class="bases__graphe" aria-hidden="true">
+                    <svg class="bases__liens"></svg>
+                    <span class="noeud noeud--pivot" data-id="pivot" style="grid-area: 1 / 1">Portefeuille d'initiatives</span>
+                    <span class="noeud" data-id="dor" style="grid-area: 1 / 2">Checklist DoR</span>
+                    <span class="noeud" data-id="dod" style="grid-area: 1 / 3">Checklist DoD</span>
+                    <span class="noeud" data-id="plans" style="grid-area: 2 / 1">Plans de taggage</span>
+                    <span class="noeud noeud--centre" data-id="backlog" style="grid-area: 2 / 2">Backlog</span>
+                    <span class="noeud" data-id="rel" style="grid-area: 2 / 3">Releases</span>
+                    <span class="noeud" data-id="dico" style="grid-area: 3 / 1">Dictionnaire des métriques</span>
+                    <span class="noeud" data-id="evt" style="grid-area: 3 / 2">Événements</span>
+                    <span class="noeud" data-id="inv" style="grid-area: 3 / 3">Inventaire des features</span>
+                  </div>
+                  <ul class="bases__aretes">
+                    <li data-de="backlog" data-vers="pivot">Backlog, relié au portefeuille d'initiatives (propriété « Initiative »)</li>
+                    <li data-de="plans" data-vers="pivot">Plans de taggage, reliés au portefeuille d'initiatives (propriété « Initiative »)</li>
+                    <li data-de="backlog" data-vers="dor">Backlog, relié à la checklist DoR (propriété « Checklist DoR »)</li>
+                    <li data-de="backlog" data-vers="dod">Backlog, relié à la checklist DoD (propriété « Checklist DoD »)</li>
+                    <li data-de="backlog" data-vers="rel">Backlog, relié aux releases (propriété « Release »)</li>
+                    <li data-de="inv" data-vers="rel">Inventaire des features, relié aux releases (propriété « Release de lancement »)</li>
+                    <li data-de="backlog" data-vers="plans">Backlog, relié aux plans de taggage (propriété « Plan de taggage »)</li>
+                    <li data-de="backlog" data-vers="evt">Backlog, relié aux événements (propriété « Événements »)</li>
+                    <li data-de="plans" data-vers="evt">Plans de taggage, reliés aux événements (propriété « Événements »)</li>
+                    <li data-de="plans" data-vers="dico">Plans de taggage, reliés au dictionnaire des métriques (propriété « Métriques »)</li>
+                  </ul>
+                </div>
+
+                <p class="bases__legende">Chaque trait est une relation entre deux bases Notion.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <details class="depliant">
           <summary>Dans le guide, les exemples sont de vraies bases Notion, reliées entre elles.</summary>
           <figure class="capture capture--schema">
@@ -485,6 +614,7 @@
 
   <script src="js/visionneuse.js" defer></script>
   <script src="js/animations.js" defer></script>
+  <script src="js/bases.js" defer></script>
   <!-- Mesure d'audience anonyme, sans cookie (GoatCounter) -->
   <script data-goatcounter="https://sylvain-lemonnier.goatcounter.com/count"
           async src="https://gc.zgo.at/count.js"></script>
