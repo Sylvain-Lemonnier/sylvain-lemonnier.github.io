@@ -2670,6 +2670,99 @@ p.parcours__statut {
   }
 }
 
+/* ===== Animations au défilement (accueil) =====
+   Les états de départ ne s'appliquent que si js/animations.js
+   a ajouté la classe « anime » sur <html>. */
+
+/* 1. Le schéma « en boucle » se construit : Vision → Discovery → Delivery,
+      puis la boucle de retour se trace, puis le socle apparaît */
+.anime .structure .carte-volet,
+.anime .structure .liaison {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.anime .structure__retour {
+  /* téléphone : la boucle monte de Delivery (en bas) vers Vision (en haut) */
+  clip-path: inset(100% -2rem -2rem -2rem);
+  transition: clip-path 0.8s ease-in-out;
+}
+
+.anime .structure.visible .carte-volet,
+.anime .structure.visible .liaison {
+  opacity: 1;
+  transform: none;
+}
+
+.anime .structure.visible .structure__retour {
+  clip-path: inset(-2rem -2rem -2rem -2rem);
+}
+
+.anime .structure .carte-volet--vision     { transition-delay: 0s; }
+.anime .structure .liaison:nth-child(3)    { transition-delay: 0.4s; }
+.anime .structure .carte-volet--discovery  { transition-delay: 0.7s; }
+.anime .structure .liaison:nth-child(5)    { transition-delay: 1.1s; }
+.anime .structure .carte-volet--delivery   { transition-delay: 1.4s; }
+.anime .structure .structure__retour       { transition-delay: 2s; }
+.anime .structure .carte-volet--socle      { transition-delay: 2.9s; }
+
+@media (min-width: 52rem) {
+  .anime .structure .liaison {
+    transform: translateX(-0.75rem);
+  }
+
+  /* ordinateur : la boucle part de Delivery (à droite) et revient vers Vision */
+  .anime .structure__retour {
+    clip-path: inset(-2rem -2rem -2rem 100%);
+  }
+}
+
+/* 2a. Les légendes des captures apparaissent l'une après l'autre (téléphone) */
+.anime .capture__legendes li {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.anime .capture__legendes.visible li {
+  opacity: 1;
+  transform: none;
+}
+
+.anime .capture__legendes li:nth-child(2) { transition-delay: 0.25s; }
+.anime .capture__legendes li:nth-child(3) { transition-delay: 0.5s; }
+
+/* 2b. Les captures se redressent et s'agrandissent en arrivant au milieu de l'écran.
+       CSS seul (animation liée au défilement) ; sans prise en charge, la capture
+       s'affiche simplement à sa taille normale. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .capture__cadre {
+      transform-origin: center top;
+      animation: capture-deploie linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+  }
+}
+
+@keyframes capture-deploie {
+  from {
+    opacity: 0.4;
+    transform: perspective(1400px) rotateX(18deg) scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 3. Chiffres du bandeau : largeur fixe des chiffres pendant le décompte */
+.anime .reperes__nombre {
+  font-variant-numeric: tabular-nums;
+}
+
 /* Moins d'animations pour qui les a désactivées */
 @media (prefers-reduced-motion: reduce) {
   * {
