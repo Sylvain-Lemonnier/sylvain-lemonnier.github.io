@@ -1510,6 +1510,255 @@ main:focus {
   font-size: 1.0625rem;
 }
 
+/* ---------- Page Missions ---------- */
+/* En-tête avec accroche et bouton */
+.entete-page--accroche {
+  padding-bottom: 3rem;
+}
+
+.entete-page__accroche {
+  margin: 1.25rem 0 0.75rem;
+  max-width: 30em;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #FFFFFF;
+}
+
+.entete-page__texte {
+  margin: 0 0 1.75rem;
+  max-width: 36em;
+  color: var(--nuit-discret);
+}
+
+.section--grise {
+  background: #F7F7F5;
+}
+
+/* Cartes avec icône : « Pour qui » et « Formats d'interventions » */
+.cartes-icone {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.carte-icone {
+  padding: 1.25rem 1.25rem 1.1rem;
+  border: 1px solid #E8E8E6;
+  border-radius: 0.75rem;
+  background: var(--fond);
+}
+
+.carte-icone p {
+  margin: 0;
+  font-size: 0.9688rem;
+  line-height: 1.55;
+}
+
+.carte-icone__icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.6rem;
+  background: var(--delivery-clair);
+  font-size: 1.3rem;
+}
+
+.carte-icone p.carte-icone__titre {
+  margin-bottom: 0.3rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--nuit);
+}
+
+/* « Pour qui » : le nom de la cible à droite de l'icône, la précision dessous */
+.carte-icone p.carte-icone__entete {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.carte-icone__entete .carte-icone__icone {
+  flex: none;
+  margin-bottom: 0;
+}
+
+.carte-icone__entete .carte-icone__titre {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--nuit);
+}
+
+.carte-icone p.carte-icone__texte {
+  font-size: 0.9063rem;
+  font-weight: 400;
+  color: var(--texte-discret);
+}
+
+/* La forme de collaboration mise en avant */
+.carte-icone--vedette {
+  border: 2px solid var(--delivery);
+  background: var(--delivery-clair);
+}
+
+.carte-icone--vedette .carte-icone__icone {
+  background: var(--fond);
+}
+
+/* Frise des 4 étapes : verticale sur téléphone, horizontale sur ordinateur */
+.frise-etapes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+
+.etape {
+  --c: var(--delivery);
+  --c-clair: var(--delivery-clair);
+  --c-fonce: var(--delivery-fonce);
+  position: relative;
+  padding: 1.25rem;
+  border-top: 4px solid var(--c);
+  border-radius: 0.75rem;
+  background: var(--fond);
+  box-shadow: 0 2px 10px rgba(31, 41, 55, 0.06);
+}
+
+.etape--vision { --c: var(--vision); --c-clair: var(--vision-clair); --c-fonce: var(--vision-fonce); }
+.etape--discovery { --c: var(--discovery); --c-clair: var(--discovery-clair); --c-fonce: var(--discovery-fonce); }
+.etape--organisation { --c: var(--organisation); --c-clair: var(--organisation-clair); --c-fonce: var(--organisation-fonce); }
+
+.etape p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.etape p.etape__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+  background: var(--c);
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.etape__titre {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: var(--c-fonce);
+}
+
+.etape p.etape__libelle {
+  margin-bottom: 0.2rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texte-discret);
+}
+
+/* Le livrable de l'étape, mis en avant */
+.etape__livrable {
+  margin: 0 0 0.9rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.5rem;
+  background: var(--c-clair);
+}
+
+.etape__livrable p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--nuit);
+}
+
+.etape__livrable p.etape__libelle {
+  color: var(--c-fonce);
+}
+
+/* Résultats alignés d'une étape à l'autre : chaque carte partage les rangées de la frise */
+@supports (grid-template-rows: subgrid) {
+  .etape {
+    display: grid;
+    grid-row: span 5;   /* numéro, titre, libellé, ce que je fais, ce que vous obtenez */
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+
+  .etape__livrable {
+    align-self: start;
+  }
+}
+
+/* Flèche entre deux étapes : vers le bas sur téléphone */
+.frise-etapes {
+  gap: 1.75rem;
+}
+
+.etape:not(:last-child)::after {
+  content: "↓";
+  position: absolute;
+  left: 50%;
+  bottom: -1.6rem;
+  transform: translateX(-50%);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--organisation);
+}
+
+.etape__livrable {
+  margin-bottom: 0;
+}
+
+.frise-etapes__note {
+  margin: 1.75rem 0 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--fond);
+  border: 1px dashed #D3D2CE;
+  font-weight: 600;
+  color: var(--nuit);
+}
+
+.frise-etapes__note span[aria-hidden="true"] {
+  margin-right: 0.35em;
+}
+
+.etiquettes {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+}
+
+.etiquettes li {
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  background: #F1F1EF;
+  font-size: 0.8125rem;
+  color: var(--texte);
+}
+
 /* ---------- Pages d'exemple : extraits du guide ---------- */
 .entete-page__surtitre {
   margin: 1.25rem 0 0;
@@ -1933,6 +2182,31 @@ p.parcours__statut {
     font-size: 2.5rem;
   }
 
+  .cartes-icone--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cartes-icone--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .frise-etapes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Deux colonnes : les flèches n'auraient pas de sens, on les masque */
+  .etape:not(:last-child)::after {
+    content: none;
+  }
+
+  .cartes-icone--3 .carte-icone--vedette {
+    grid-column: span 2;
+  }
+
+  .entete-page__accroche {
+    font-size: 1.625rem;
+  }
+
   .inventaire {
     grid-template-columns: repeat(2, 1fr);   /* deux volets côte à côte, comme dans Notion */
     gap: 2.5rem 3rem;
@@ -2164,6 +2438,29 @@ p.parcours__statut {
   .carte-chiffre__titre {
     flex-direction: column;
     gap: 0.35rem;
+  }
+
+  /* Missions : frise horizontale, formats sur trois colonnes, le premier sur deux */
+  .frise-etapes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Quatre colonnes : une flèche vers la droite entre deux étapes */
+  .etape:not(:last-child)::after {
+    content: "→";
+    left: auto;
+    right: -1.45rem;
+    top: 1.5rem;
+    bottom: auto;
+    transform: none;
+  }
+
+  .cartes-icone--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .carte-icone--vedette {
+    grid-column: span 2;
   }
 
   /* Accroche sur deux colonnes : le texte à gauche, les captures à droite */

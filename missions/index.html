@@ -29,7 +29,7 @@
 
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <header class="entete-page">
+  <header class="entete-page entete-page--accroche">
     <div class="conteneur">
       <a class="entete-page__retour" href="/">← Guide Pratique de Product Management</a>
       <div class="hero__volets" aria-hidden="true">
@@ -39,82 +39,120 @@
         <span class="volet volet--organisation"></span>
       </div>
       <h1 class="entete-page__titre">Missions produit et coaching</h1>
+      <p class="entete-page__accroche">Ce guide n'est pas qu'une référence&nbsp;: c'est une boîte à outils à utiliser en mission.</p>
+      <p class="entete-page__texte">Cette page décrit comment je m'en sers pour accompagner une équipe produit, du diagnostic à l'autonomie.</p>
+      <a class="bouton" href="/contact/">
+        <span aria-hidden="true">📩</span> Écrivez-moi
+      </a>
     </div>
   </header>
 
   <main id="contenu" tabindex="-1">
 
-    <section class="section section--premiere">
-      <div class="conteneur">
-        <p class="chapeau">Ce guide n'est pas qu'une référence&nbsp;: c'est une boîte à outils à utiliser en mission.</p>
-        <p class="section__texte">Cette page décrit comment je m'en sers pour accompagner une équipe produit, du diagnostic à l'autonomie.</p>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="titre-pour-qui">
+    <section class="section section--premiere" aria-labelledby="titre-pour-qui">
       <div class="conteneur">
         <h2 id="titre-pour-qui" class="section__titre">Pour qui</h2>
-        <ul class="liste-points">
-          <li><strong>Une direction générale ou technique</strong> qui veut structurer une fonction produit naissante, sans Chief Product Officer</li>
-          <li><strong>Une équipe produit qui grandit</strong> et dont les façons de faire ne suivent plus&nbsp;: priorités floues, rituels sans décisions, roadmap subie</li>
-          <li><strong>Une organisation qui passe d'une logique de projets à une logique de produit</strong></li>
-          <li><strong>Des PM et des PO</strong> qui veulent progresser, individuellement ou en équipe</li>
+        <ul class="cartes-icone cartes-icone--2 cartes-icone--cibles">
+          <li class="carte-icone">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🏢</span><span class="carte-icone__titre">Une direction générale ou technique</span></p>
+            <p class="carte-icone__texte">qui n'a pas encore de Chief Product Officer et qui veut structurer une fonction produit naissante</p>
+          </li>
+          <li class="carte-icone">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">📈</span><span class="carte-icone__titre">Une équipe produit</span></p>
+            <p class="carte-icone__texte">qui grandit et dont les façons de faire ne suivent plus&nbsp;: priorités floues, rituels sans décisions, roadmap subie</p>
+          </li>
+          <li class="carte-icone">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🔄</span><span class="carte-icone__titre">Une organisation</span></p>
+            <p class="carte-icone__texte">qui passe d'une logique de projets à une logique de produit</p>
+          </li>
+          <li class="carte-icone">
+            <p class="carte-icone__entete"><span class="carte-icone__icone" aria-hidden="true">🎯</span><span class="carte-icone__titre">Des PM et des PO</span></p>
+            <p class="carte-icone__texte">qui veulent progresser, individuellement ou en équipe</p>
+          </li>
         </ul>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="titre-demarche">
+    <section class="section section--grise" aria-labelledby="titre-demarche">
       <div class="conteneur">
         <h2 id="titre-demarche" class="section__titre">La démarche en 4 temps</h2>
 
-        <table class="tableau tableau--etapes">
-          <thead>
-            <tr>
-              <th scope="col">Étape</th>
-              <th scope="col">Ce qu'on fait</th>
-              <th scope="col">Ce qui en sort</th>
-              <th scope="col">Dans le guide</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1. Diagnostiquer</th>
-              <td data-libelle="Ce qu'on fait">Entretiens avec la direction, les PM, la tech et le design&nbsp;; observation des rituels&nbsp;; revue de la roadmap, du backlog et des indicateurs</td>
-              <td data-libelle="Ce qui en sort">Un diagnostic partagé et deux ou trois priorités d'accompagnement</td>
-              <td data-libelle="Dans le guide">Vue d'ensemble</td>
-            </tr>
-            <tr>
-              <th scope="row">2. Cadrer</th>
-              <td data-libelle="Ce qu'on fait">Clarifier la vision, la North Star et les OKR&nbsp;; relier la roadmap aux objectifs&nbsp;; définir les rôles</td>
-              <td data-libelle="Ce qui en sort">Une vision et des objectifs partagés, une roadmap arbitrée, un RACI</td>
-              <td data-libelle="Dans le guide">North Star et OKR, La roadmap</td>
-            </tr>
-            <tr>
-              <th scope="row">3. Installer</th>
-              <td data-libelle="Ce qu'on fait">Mettre en place les rituels, les instances de pilotage et les gabarits&nbsp;; coacher les PM et les PO en situation, sur leurs vrais sujets</td>
-              <td data-libelle="Ce qui en sort">Des rituels qui produisent des décisions, des gabarits adaptés à l'équipe</td>
-              <td data-libelle="Dans le guide">Les rituels du sprint, Piloter et partager l'avancement</td>
-            </tr>
-            <tr>
-              <th scope="row">4. Rendre autonome</th>
-              <td data-libelle="Ce qu'on fait">Espacer l'accompagnement, laisser l'équipe animer seule, faire un bilan à la fin</td>
-              <td data-libelle="Ce qui en sort">Une équipe qui fait vivre ses pratiques sans coach</td>
-              <td data-libelle="Dans le guide">Les checklists de chaque page</td>
-            </tr>
-          </tbody>
-        </table>
+        <ol class="frise-etapes">
+          <li class="etape etape--vision">
+            <p class="etape__numero" aria-hidden="true">1</p>
+            <h3 class="etape__titre">Diagnostiquer</h3>
+            <p class="etape__libelle">Ce que je fais</p>
+            <p>Entretiens avec la direction, les PM, la tech et le design&nbsp;; observation des rituels&nbsp;; revue de la roadmap, du backlog et des indicateurs</p>
+            <div class="etape__livrable">
+              <p class="etape__libelle">Ce que vous obtenez</p>
+              <p>Un diagnostic partagé et deux ou trois priorités d'accompagnement</p>
+            </div>
+          </li>
+          <li class="etape etape--discovery">
+            <p class="etape__numero" aria-hidden="true">2</p>
+            <h3 class="etape__titre">Cadrer</h3>
+            <p class="etape__libelle">Ce que je fais</p>
+            <p>Clarifier la vision, la North Star et les OKR&nbsp;; relier la roadmap aux objectifs&nbsp;; définir les rôles</p>
+            <div class="etape__livrable">
+              <p class="etape__libelle">Ce que vous obtenez</p>
+              <p>Une vision et des objectifs partagés, une roadmap arbitrée, un RACI</p>
+            </div>
+          </li>
+          <li class="etape etape--delivery">
+            <p class="etape__numero" aria-hidden="true">3</p>
+            <h3 class="etape__titre">Installer</h3>
+            <p class="etape__libelle">Ce que je fais</p>
+            <p>Mettre en place les rituels, les instances de pilotage et les gabarits&nbsp;; coacher les PM et les PO en situation, sur leurs vrais sujets</p>
+            <div class="etape__livrable">
+              <p class="etape__libelle">Ce que vous obtenez</p>
+              <p>Des rituels qui produisent des décisions, des gabarits adaptés à l'équipe</p>
+            </div>
+          </li>
+          <li class="etape etape--organisation">
+            <p class="etape__numero" aria-hidden="true">4</p>
+            <h3 class="etape__titre">Rendre autonome</h3>
+            <p class="etape__libelle">Ce que je fais</p>
+            <p>Espacer l'accompagnement, laisser l'équipe animer seule, faire un bilan à la fin</p>
+            <div class="etape__livrable">
+              <p class="etape__libelle">Ce que vous obtenez</p>
+              <p>Une équipe qui fait vivre ses pratiques sans coach</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="frise-etapes__note"><span aria-hidden="true">📘</span> À chaque étape, je m'appuie sur les chapitres, les gabarits et les checklists du guide.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="titre-formats">
       <div class="conteneur">
         <h2 id="titre-formats" class="section__titre">Formats d'interventions</h2>
-        <ul class="liste-points">
-          <li><strong>Direction produit de transition ou à temps partagé</strong>&nbsp;: tenir le rôle de Chief Product Officer ou de Head of Product le temps de structurer l'équipe ou de recruter, ou quelques jours par semaine</li>
-          <li><strong>Coaching individuel</strong> des PM et des PO&nbsp;: un rendez-vous régulier sur leurs sujets en cours</li>
-          <li><strong>Ateliers d'équipe</strong>&nbsp;: vision, OKR, priorisation, découpage des stories, rétro</li>
-          <li><strong>Accompagnement de la direction produit</strong>&nbsp;: organisation, rôles, instances de pilotage</li>
-          <li><strong>Formation</strong>&nbsp;: les fondamentaux du product management, à partir des pages et des gabarits du guide</li>
+        <ul class="cartes-icone cartes-icone--3">
+          <li class="carte-icone carte-icone--vedette">
+            <span class="carte-icone__icone" aria-hidden="true">🧭</span>
+            <p class="carte-icone__titre">Direction produit de transition ou à temps partagé</p>
+            <p>Tenir le rôle de Chief Product Officer ou de Head of Product le temps de structurer l'équipe ou de recruter, ou quelques jours par semaine</p>
+          </li>
+          <li class="carte-icone">
+            <span class="carte-icone__icone" aria-hidden="true">💬</span>
+            <p class="carte-icone__titre">Coaching individuel</p>
+            <p>Des PM et des PO&nbsp;: un rendez-vous régulier sur leurs sujets en cours</p>
+          </li>
+          <li class="carte-icone">
+            <span class="carte-icone__icone" aria-hidden="true">🧩</span>
+            <p class="carte-icone__titre">Ateliers d'équipe</p>
+            <p>Vision, OKR, priorisation, découpage des stories, rétro</p>
+          </li>
+          <li class="carte-icone">
+            <span class="carte-icone__icone" aria-hidden="true">🏛️</span>
+            <p class="carte-icone__titre">Accompagnement de la direction produit</p>
+            <p>Organisation, rôles, instances de pilotage</p>
+          </li>
+          <li class="carte-icone">
+            <span class="carte-icone__icone" aria-hidden="true">🎓</span>
+            <p class="carte-icone__titre">Formation</p>
+            <p>Les fondamentaux du product management, à partir des pages et des gabarits du guide</p>
+          </li>
         </ul>
       </div>
     </section>
