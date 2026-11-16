@@ -238,18 +238,17 @@
 
         <p class="section__texte">Le guide ne se contente pas d'être lu&nbsp;: c'est un espace de travail.</p>
 
-        <!-- Schéma interactif des bases Notion (à l'essai, au-dessus de l'ancienne version).
+        <!-- Schéma interactif des bases Notion.
              Une carte à deux faces : l'étoile au recto, le schéma d'une famille au verso.
              js/bases.js retourne la carte et trace les liens. -->
         <div class="bases">
-          <h3 class="exemple__titre">Des bases reliées autour d'un pivot&nbsp;: le portefeuille d'initiatives</h3>
+          <h3 class="exemple__titre">Les exemples sont de vraies bases Notion reliées entre elles.</h3>
 
           <div class="bases__scene">
             <div class="bases__carte">
 
               <!-- Recto : les quatre familles autour du pivot -->
               <div class="bases__face bases__face--recto">
-                <p class="bases__aide">Choisissez une famille pour voir ses bases et leurs relations.</p>
                 <div class="bases__etoile">
                   <svg class="bases__liens" aria-hidden="true" focusable="false"></svg>
 
@@ -276,6 +275,7 @@
                     <span class="bases__nombre">8 bases</span>
                   </button>
                 </div>
+                <p class="bases__aide">Cliquez sur l'une des familles pour voir ses bases et leurs relations.</p>
               </div>
 
               <!-- Verso : le schéma de la famille choisie.
@@ -366,19 +366,6 @@
             </div>
           </div>
         </div>
-
-        <details class="depliant">
-          <summary>Dans le guide, les exemples sont de vraies bases Notion, reliées entre elles.</summary>
-          <figure class="capture capture--schema">
-            <div class="capture__cadre">
-              <img src="images/captures/bases-product-management.jpg" width="1480" height="1010" loading="lazy"
-                   alt="Schéma des bases Notion du guide, reliées autour du portefeuille d'initiatives, la base pivot : Pilotage (OKR, résultats clés), Organisation (points d'avancement, réunions, pour action), Discovery (tests, études, enseignements), Delivery et mesure (backlog, checklists DoR et DoD, releases, inventaire des features, plans de taggage, événements, dictionnaire des métriques), et des documents de période autonomes.">
-              <button type="button" class="capture__agrandir" data-plein-ecran="images/captures/bases-product-management.jpg">
-                <span aria-hidden="true">⤢</span> Agrandir<span class="visuellement-cache"> le schéma des bases Notion</span>
-              </button>
-            </div>
-          </figure>
-        </details>
 
         <aside class="encadre">
           <p><strong>Le cas fil rouge</strong>&nbsp;: une application de navigation, ses trois équipes (Guidage, Mobilité urbaine, Données cartographiques) et leur année produit, cohérente de la vision jusqu'à la story. Toute la chaîne est documentée&nbsp;: objectif, initiative, étude, test, story, plan de taggage, démo, bilan.</p>

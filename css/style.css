@@ -742,7 +742,7 @@ main:focus {
   padding: 0 1.1rem 1.1rem;
 }
 
-/* ----- Schéma interactif des bases Notion (à l'essai) -----
+/* ----- Schéma interactif des bases Notion -----
    Une carte à deux faces dans un espace en perspective :
    recto = le portefeuille d'initiatives et les quatre familles,
    verso = le schéma de la famille choisie. js/bases.js retourne la carte. */
@@ -851,17 +851,12 @@ main:focus {
   margin-top: 0;
 }
 
+/* Textes sous le schéma : taille normale du site */
 .bases__aide,
 .bases__legende {
-  margin: 0 0 1.25rem;
-  font-size: 0.9375rem;
+  margin: 1.5rem 0 0;
   color: var(--texte-discret);
   text-align: center;
-}
-
-.bases__legende {
-  margin: 1.25rem 0 0;
-  font-size: 0.8125rem;
 }
 
 /* --- Recto : l'étoile ---
