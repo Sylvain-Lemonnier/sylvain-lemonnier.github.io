@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact · Sylvain Lemonnier</title>
+  <meta name="description" content="Écrire à Sylvain Lemonnier, auteur du Guide Pratique de Product Management : accès au guide complet, poste de direction produit, mission produit ou coaching.">
+  <meta name="author" content="Sylvain Lemonnier">
+  <link rel="canonical" href="https://sylvain-lemonnier.github.io/contact/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Guide Pratique de Product Management">
+  <meta property="og:title" content="Contact · Sylvain Lemonnier">
+  <meta property="og:description" content="Pour accéder au guide complet ou pour échanger : écrivez-moi.">
+  <meta property="og:url" content="https://sylvain-lemonnier.github.io/contact/">
+  <meta property="og:image" content="https://sylvain-lemonnier.github.io/images/apercu-linkedin.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Guide Pratique de Product Management, par Sylvain Lemonnier">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete-page">
+    <div class="conteneur">
+      <a class="entete-page__retour" href="/">← Guide Pratique de Product Management</a>
+      <div class="hero__volets" aria-hidden="true">
+        <span class="volet volet--vision"></span>
+        <span class="volet volet--discovery"></span>
+        <span class="volet volet--delivery"></span>
+        <span class="volet volet--organisation"></span>
+      </div>
+      <h1 class="entete-page__titre">Écrivez-moi</h1>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <section class="section section--premiere" aria-label="Formulaire de contact">
+      <div class="conteneur">
+        <p class="chapeau">Pour accéder au guide complet ou pour échanger, laissez&#8209;moi un message.</p>
+
+        <!-- Le formulaire est transmis à Web3Forms, qui envoie le message par e-mail.
+             La clé d'accès n'est pas secrète : elle est faite pour figurer dans la page. -->
+        <form class="formulaire" id="formulaire-contact" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="420c8220-ff18-4924-8898-9c76a55ede80">
+          <input type="hidden" name="subject" value="Nouveau message depuis le site du Guide Pratique de Product Management">
+          <input type="hidden" name="from_name" value="Site Guide Pratique de Product Management">
+
+          <!-- Piège à robots : case invisible pour les personnes, cochée par les robots -->
+          <input type="checkbox" name="botcheck" class="formulaire__piege" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="formulaire__champ">
+            <label for="nom">Votre nom</label>
+            <input type="text" id="nom" name="name" required maxlength="100" autocomplete="name">
+          </div>
+
+          <div class="formulaire__champ">
+            <label for="email">Votre e-mail</label>
+            <input type="email" id="email" name="email" required maxlength="200" autocomplete="email" inputmode="email">
+          </div>
+
+          <div class="formulaire__champ">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" required rows="7" maxlength="5000"></textarea>
+          </div>
+
+          <p class="formulaire__mention">Ces informations servent uniquement à vous répondre. Elles transitent par le service Web3Forms, qui me transmet votre message par e-mail.</p>
+
+          <button type="submit" class="bouton formulaire__envoyer">Envoyer</button>
+
+          <p class="formulaire__statut" id="formulaire-statut" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <p>Sylvain Lemonnier · Guide Pratique de Product Management · Novembre 2026</p>
+    </div>
+  </footer>
+
+  <script src="/js/contact.js"></script>
+</body>
+</html>

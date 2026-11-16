@@ -1208,6 +1208,89 @@ main:focus {
   color: var(--texte-discret);
 }
 
+/* ---------- Formulaire de contact ---------- */
+.formulaire {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+}
+
+.formulaire__champ {
+  margin-bottom: 1.25rem;
+}
+
+.formulaire label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--nuit);
+}
+
+.formulaire input,
+.formulaire textarea {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #8A8985;   /* contraste 3:1 minimum pour la bordure d'un champ */
+  border-radius: 0.4rem;
+  background: var(--fond);
+  color: var(--texte);
+  font: inherit;               /* 1,06 rem : évite le zoom automatique sur iPhone */
+}
+
+.formulaire textarea {
+  resize: vertical;
+  min-height: 9rem;
+}
+
+.formulaire input:focus,
+.formulaire textarea:focus {
+  outline: 3px solid rgba(56, 125, 201, 0.35);
+  border-color: var(--delivery-fonce);
+}
+
+.formulaire__piege {
+  position: absolute;
+  left: -9999px;
+}
+
+.formulaire__mention {
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  color: var(--texte-discret);
+}
+
+.formulaire__envoyer {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.formulaire__envoyer:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.formulaire__statut:empty {
+  display: none;
+}
+
+.formulaire__statut {
+  margin: 1.25rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
+.formulaire__statut--succes {
+  background: #EAF5EC;
+  color: #1E6B34;
+}
+
+.formulaire__statut--erreur {
+  background: #FBEDEB;
+  color: #A3301F;
+}
+
 /* ---------- 8. Pied de page ---------- */
 .pied {
   border-top: 1px solid #E5E5E3;
