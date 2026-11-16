@@ -41,6 +41,10 @@
           if (chapeau) chapeau.hidden = true;
           confirmation.hidden = false;
           confirmation.focus();   // les lecteurs d'écran annoncent la confirmation
+          // Mesure d'audience : compte l'envoi, sans rien transmettre du message
+          if (window.goatcounter && window.goatcounter.count) {
+            window.goatcounter.count({ path: 'message-envoye', title: 'Message envoyé', event: true });
+          }
           window.scrollTo(0, 0);
         } else {
           throw new Error(resultat.message);

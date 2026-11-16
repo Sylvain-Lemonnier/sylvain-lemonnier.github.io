@@ -2287,6 +2287,10 @@ p.parcours__statut {
   margin: 0;
 }
 
+.pied a {
+  color: inherit;
+}
+
 /* ---------- 9. Adaptation tablette et ordinateur ---------- */
 /* Tablette (≥ 36rem) */
 @media (min-width: 36rem) {
